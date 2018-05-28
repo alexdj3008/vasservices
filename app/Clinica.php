@@ -15,4 +15,8 @@ class Clinica extends Model
     {
         return $this->hasMany(Quirofano::class);
     }
+    public function tratamientos()
+    {
+        return $this->belongsToMany(TipoCirugia::class);
+    }
 }

@@ -22,15 +22,11 @@ class PagesController extends Controller
         ->where('clinicas.estatus','=','A')
         ->get();
         $clinicas=Clinica::where("estatus","=","A")->orderBy('estado_id')->get();
-        $tratamientos=DB::table('tipo_cirugias')
-        ->select('tipos_cirugias')//mostrar los tipos de cirugia por clinica
-        ->get();
         return view('usuario/iclinicas',compact('clinicas','estados'));
     }
 
     public function clinica(Clinica $clinica)
     {
-        
         return view('usuario.clinicas.view',compact('clinica'));
     }
     public function tipocirugia(TipoCirugia $tratamiento)
