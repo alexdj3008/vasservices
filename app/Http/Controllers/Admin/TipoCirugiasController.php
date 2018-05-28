@@ -34,7 +34,7 @@ class TipoCirugiasController extends Controller
         $tipocirugia->descripcion=$request->get('descripcion');
         $tipocirugia->estatus="A";
         $tipocirugia->save();
-        $tipocirugia->clinicas()->attach($request->get('clinicas'));
+        $tipocirugia->clinicas()->sync($request->get('clinicas'));
         return back()->with('flash','Registro realizado con éxito');
     }
     public function edit(TipoCirugia $tipocirugia)
@@ -48,7 +48,7 @@ class TipoCirugiasController extends Controller
         $tipocirugia->nombre=$request->get('nombre');
         $tipocirugia->especialidad_id=$request->get('especialidad');
         $tipocirugia->descripcion=$request->get('descripcion');
-        $tipocirugia->estatus="A";
+        $tipocirugia->clinicas()->sync($request->get('clinicas'));
         $tipocirugia->save();
         return back()->with('flash','Tipo de Cirugia modificada con éxito');
     }

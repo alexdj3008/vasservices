@@ -56,7 +56,7 @@
                             data-placeholder="Selecciona una o mas clínicas" style="width: 100%;" required autofocus>
                             @foreach($clinicas as $clinica)
                                 <option {{collect(old('clinicas', $tipocirugia->clinicas->pluck('id')))->contains($clinica->id) ? 'selected'
-                                : '' }} value="{{$clinica->rif}}" >
+                                : '' }} value="{{$clinica->id}}" >
                                 {{$clinica->rif}},{{$clinica->nombre}},{{$clinica->estado->nombre}}
                                 </option>
                             @endforeach
