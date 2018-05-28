@@ -48,6 +48,20 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label>Clínicas que realizan esta cirugia</label>
+                        <select name='clinicas[]' class="form-control select2" 
+                            multiple="multiple" 
+                            data-placeholder="Selecciona una o mas clínicas" style="width: 100%;" required autofocus>
+                            @foreach($clinicas as $clinica)
+                                <option {{collect(old('clinicas', $tipocirugia->clinicas->pluck('id')))->contains($clinica->id) ? 'selected'
+                                : '' }} value="{{$clinica->rif}}" >
+                                {{$clinica->rif}},{{$clinica->nombre}},{{$clinica->estado->nombre}}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                     
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -59,11 +73,17 @@
 </div>    
 @stop
 
+@push('styles')
+<link rel="stylesheet" href="http://localhost/vas/public/adminlte/plugins/select2/select2.min.css">
+<link rel="stylesheet" href="http://localhost/vas/public/adminlte/plugins/select2/select2.min.css">
+@endpush
+
 @push('scripts')
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="http://localhost/vas/public/adminlte/plugins/select2/select2.full.min.js"></script>
 <script>
     
     CKEDITOR.replace('editor');
-    
+    $('.select2').select2();    
 </script>
 @endpush

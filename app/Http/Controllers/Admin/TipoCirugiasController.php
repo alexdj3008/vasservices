@@ -35,12 +35,13 @@ class TipoCirugiasController extends Controller
         $tipocirugia->estatus="A";
         $tipocirugia->save();
         $tipocirugia->clinicas()->attach($request->get('clinicas'));
-        return back()->with('flash','Tipo de cirugía creada');
+        return back()->with('flash','Registro realizado con éxito');
     }
     public function edit(TipoCirugia $tipocirugia)
     {
+        $clinicas=Clinica::where("estatus","=","A")->get();
         $especialidades=Especialidad::all();
-        return view('admin.tipocirugia.iedittipocirugia',compact('tipocirugia','especialidades'));
+        return view('admin.tipocirugia.iedittipocirugia',compact('tipocirugia','especialidades','clinicas'));
     }
     public function update(TipoCirugia $tipocirugia,Request $request)
     {
@@ -49,7 +50,7 @@ class TipoCirugiasController extends Controller
         $tipocirugia->descripcion=$request->get('descripcion');
         $tipocirugia->estatus="A";
         $tipocirugia->save();
-        return back()->with('flash','Tipo de Cirugia modificada');
+        return back()->with('flash','Tipo de Cirugia modificada con éxito');
     }
     public function delete(TipoCirugia $tipocirugia,Request $request)
     {

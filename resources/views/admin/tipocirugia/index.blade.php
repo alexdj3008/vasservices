@@ -36,7 +36,7 @@
           <td>{{$tipocirugia->especialidad->descripcion}}</td>
           <td>
 
-          <a href="{{route('admin.tipocirugia.edit',$tipocirugia)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <a href="{{route('admin.tipocirugia.edit',$tipocirugia)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"> Editar</i></a>
           <form action="{{route('admin.tipocirugia.delete',$tipocirugia)}}" onsubmit="return confirm('Seguro que quiere eliminar el registro?')" method="POST" style="display:inline">
               {{csrf_field()}} {{method_field('PUT')}}
             <button href="" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Eliminar</button>
