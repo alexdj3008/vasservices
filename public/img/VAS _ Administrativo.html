@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost/vas/public/admin/clinicas -->
+<html style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VAS | Administrativo</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link href="http://localhost/vas/public/img/favicon.png" rel="icon">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="./VAS _ Administrativo_files/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./VAS _ Administrativo_files/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="./VAS _ Administrativo_files/ionicons.min.css">
+  <!--Tabla-->
+  <link rel="stylesheet" href="./VAS _ Administrativo_files/dataTables.bootstrap.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./VAS _ Administrativo_files/AdminLTE.min.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+    <link rel="stylesheet" href="./VAS _ Administrativo_files/skin-blue-light.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="skin-blue-light sidebar-mini" style="height: auto;">
+<div class="wrapper" style="height: auto;">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="http://localhost/vas/public/admin/index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>V</b>AS</span>
+      <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg"><b>VAS</b>Administrativo</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="http://localhost/vas/public/admin/clinicas#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          
+          
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="http://localhost/vas/public/admin/clinicas#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="./VAS _ Administrativo_files/user2-160x160.jpg" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">Alexis Goyo</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- The user image in the menu -->
+              <li class="user-header">
+                <img src="./VAS _ Administrativo_files/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexis Goyo - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="http://localhost/vas/public/admin/clinicas#" class="btn btn-default btn-flat">Editar Datos</a>
+                </div>
+                <div class="pull-right">
+                <a href="http://localhost/vas/public/logout" class="btn btn-default btn-flat">Salir</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="./VAS _ Administrativo_files/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Alexis Goyo</p>
+          <!-- Status -->
+          <a href="http://localhost/vas/public/admin/clinicas#"><i class="fa fa-circle text-success"></i>En Línea</a>
+        </div>
+      </div>
+
+      <!-- search form (Optional) 
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+       /.search form -->
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+    <li class="header">Navegación</li>
+    <!-- Optionally, you can add icons to the links -->
+<li><a href="http://localhost/vas/public/admin"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
+<li><a href="http://localhost/vas/public/admin"><i class="fa fa-pencil"></i> <span>Planificación de cirugías</span></a></li>    
+    <li class="treeview">
+      <a href="http://localhost/vas/public/admin/clinicas#"><i class="fa fa-hospital-o"></i> <span>Clínicas</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu" style="display: none;">
+        <li class=""><a href="http://localhost/vas/public/admin/clinicas"><i class="fa fa-eye"> Ver todas las clínicas</i></a></li>
+        <li><a href="http://localhost/vas/public/admin/clinicas/create"><i class="fa fa-pencil"> Añadir una clínica</i></a></li>
+      </ul>
+    </li>
+
+    <li class="treeview  active">
+      <a href="http://localhost/vas/public/admin/clinicas#"><i class="fa fa-plus-square"></i> <span>Quirófanos</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu menu-open" style="display: block;">
+        <li><a href="http://localhost/vas/public/admin/quirofanos"><i class="fa fa-eye"> Ver todoss los quirófanos</i></a></li>
+        <li><a href="http://localhost/vas/public/admin/quirofanos/create"><i class="fa fa-pencil"> Añadir quirófano</i></a></li>
+      </ul>
+    </li>
+    <li class="treeview ">
+      <a href="http://localhost/vas/public/admin/clinicas#"><i class="fa fa-medkit"></i> <span>Tipos de cirugías</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="http://localhost/vas/public/admin/tiposcirugias"><i class="fa fa-eye"> Ver todos los tipos de cirugía</i></a></li>
+        <li><a href="http://localhost/vas/public/admin/tiposcirugias/create"><i class="fa fa-pencil"> Añadir Tipo de cirugía</i></a></li>
+      </ul>
+    </li>
+
+    <li class="treeview ">
+      <a href="http://localhost/vas/public/admin/clinicas#"><i class="fa fa-stethoscope"></i> <span>Médico cirujano</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="http://localhost/vas/public/admin/cirujanos"><i class="fa fa-eye"> Ver todos los Médicos</i></a></li>
+        <li><a href="http://localhost/vas/public/admin/cirujanos/create"><i class="fa fa-pencil"> Añadir Médico cirujano</i></a></li>
+      </ul>
+    </li>
+
+    <li class="treeview">
+      <a href="http://localhost/vas/public/admin/clinicas#"><i class="fa fa-users"></i> <span>Pacientes</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu" style="display: none;">
+        <li class=""><a href="http://localhost/vas/public/admin/clinicas"><i class="fa fa-eye"> Ver todoss los pacientes</i></a></li>
+        
+      </ul>
+    </li>
+
+
+    <li class="treeview ">
+      <a href="http://localhost/vas/public/admin/clinicas#"><i class="fa fa-bars"></i> <span>Servicios adicionales</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="http://localhost/vas/public/admin/servicios"><i class="fa fa-eye"> Ver todoss los servicios</i></a></li>
+        <li><a href="http://localhost/vas/public/admin/servicios/create"><i class="fa fa-pencil"> Añadir servicio</i></a></li>
+      </ul>
+    </li>
+  </ul>      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="min-height: 514px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+  Clinicas
+  <small></small>
+</h1>
+<ol class="breadcrumb">
+  <li><a href="http://localhost/vas/public/admin"><i class="fa fa-dashboard"></i> Inicio</a></li>
+  <li class="active">Clínicas</li>
+</ol>
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+              
+  <div class="box box-primary">
+    <div class="box-header">
+      <h3 class="box-title">Tabla de resumen de datos</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div id="clinicas-table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="clinicas-table_length"><label>Show <select name="clinicas-table_length" aria-controls="clinicas-table" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-6"><div id="clinicas-table_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="clinicas-table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="clinicas-table" class="table table-bordered table-striped dataTable no-footer" role="grid" aria-describedby="clinicas-table_info">
+        <thead>
+        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="clinicas-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="ID: activate to sort column descending" style="width: 13.0208px;">ID</th><th class="sorting" tabindex="0" aria-controls="clinicas-table" rowspan="1" colspan="1" aria-label="Nombre: activate to sort column ascending" style="width: 134.021px;">Nombre</th><th class="sorting" tabindex="0" aria-controls="clinicas-table" rowspan="1" colspan="1" aria-label="Dirección: activate to sort column ascending" style="width: 477.021px;">Dirección</th><th class="sorting" tabindex="0" aria-controls="clinicas-table" rowspan="1" colspan="1" aria-label="Acciones: activate to sort column ascending" style="width: 54.0104px;">Acciones</th></tr>
+      </thead>
+      <tbody>
+                
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <tr role="row" class="odd">
+          <td class="sorting_1">1</td>
+          <td>Clínica Razetti</td>
+          <td>Lara, Barquisimeto, Cr. 21 Esquina calle 27 y 28, Edificio Clínica Razetti, Nivel -, Apto. -, Sector Centro</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/1" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/1" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="even">
+          <td class="sorting_1">2</td>
+          <td>Clínica Acosta Ortiz, C.A.</td>
+          <td>Lara, Barquisimeto, Cr. 19, entre, Cl. 30y 31, Edificio Acosta Ortiz, Piso Pb, Local 30-78, Urbanización Centro</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/2" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/2" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="odd">
+          <td class="sorting_1">3</td>
+          <td>Clínica Cemo, C.A.</td>
+          <td>Distrito Capital, Caracas, Av. Arturo Michelena, entre, Av. Reinaldo Han Y Simón Planas, Edificio Clínica Cemo, Piso PB, Apto. s/n, Urbanización Santa Mónica</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/3" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/3" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="even">
+          <td class="sorting_1">4</td>
+          <td>Unidad Clínica de Especialidades de Oriente, C.A.</td>
+          <td>Anzoátegui, Barcelona, Av. Country Club, Edificio Unidad Clínica de Especialidades de Oriente, Piso PB, Local S/N, Urbanización Urdaneta</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/4" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/4" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="odd">
+          <td class="sorting_1">5</td>
+          <td>Clínica Santa F</td>
+          <td>Lara, Barquisimeto, Av. Vargas Sur c/c Av. Uruguay, Edificio Clínica Santa Fe, Nivel ., Local .</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/5" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/5" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="even">
+          <td class="sorting_1">6</td>
+          <td>Clínica Idet, C.A.</td>
+          <td>Distrito Capital, Caracas, Av. Luis Roche, Edificio Mansión Avila, Piso 4 Y 5, Apto. n/a, Urbanización Altamira</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/6" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/6" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="odd">
+          <td class="sorting_1">7</td>
+          <td>Centro Médico Quirúrgico La Fe, C.A</td>
+          <td>Nueva Esparta, Porlamar, Av. Jóvito Villalba, Edificio Ctro Med. La Fe, Nivel PB, Local La Fe, Urbanización Jorge Coll</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/7" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/7" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="even">
+          <td class="sorting_1">8</td>
+          <td>Clinica Calicanto,C.A.</td>
+          <td>Aragua, Maracay, Av. Sucre, Edificio 43, Nivel ., Apto. ., Urbanización Calicanto</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/8" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/8" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="odd">
+          <td class="sorting_1">9</td>
+          <td>Policlínica Táchira Hospitalización, C.A.</td>
+          <td>Táchira, San Cristóbal, Av. 19 de Abril, Edificio Policlínica Táchira, Nivel n/a, Local n/a, Urbanización La Rotaria</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/9" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/9" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr><tr role="row" class="even">
+          <td class="sorting_1">10</td>
+          <td>Consultorio Odontológico Arte y Salud Dental</td>
+          <td>Portuguesa, Acarigua, Av. 18, cruce con, Cl. 30 Y 31, Centro Comercial Millenium, Piso 2, Local P2 15, Urbanización Centro</td>
+          <td>
+
+          <a href="http://localhost/vas/public/admin/clinicas/10" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <form action="http://localhost/vas/public/admin/clinicas/delete/10" onsubmit="return confirm(&#39;Seguro que quiere eliminar el registro?&#39;)" method="POST" style="display:inline">
+              <input type="hidden" name="_token" value="U58kXrxSdewqK7b9zBqzHbWi2JEFBR7dDtst9VDh"> <input type="hidden" name="_method" value="PUT">
+            <button href="" class="btn btn-xs btn-danger" data-confirm="Are you sure you want to delete data-toggle=" modal"="" data-target="#myModal"><i class="fa fa-times"></i></button>
+          </form>
+          </td>  
+        </tr></tbody>
+        
+      </table></div></div><div class="row"><div class="col-sm-5"><div class="dataTables_info" id="clinicas-table_info" role="status" aria-live="polite">Showing 1 to 10 of 11 entries</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="clinicas-table_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="clinicas-table_previous"><a href="http://localhost/vas/public/admin/clinicas#" aria-controls="clinicas-table" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="http://localhost/vas/public/admin/clinicas#" aria-controls="clinicas-table" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="http://localhost/vas/public/admin/clinicas#" aria-controls="clinicas-table" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button next" id="clinicas-table_next"><a href="http://localhost/vas/public/admin/clinicas#" aria-controls="clinicas-table" data-dt-idx="3" tabindex="0">Next</a></li></ul></div></div></div></div>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+  
+      
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      
+    </div>
+    <!-- Default to the left -->
+  <strong>Copyright © 2018 <a href="http://localhost/vas/public">VAS</a>.</strong> Todos los derechos reservados.
+  </footer>
+
+  
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="./VAS _ Administrativo_files/jquery-2.2.3.min.js.descarga"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="./VAS _ Administrativo_files/bootstrap.min.js.descarga"></script>
+<script src="./VAS _ Administrativo_files/jquery.dataTables.min.js.descarga"></script>
+<script src="./VAS _ Administrativo_files/dataTables.bootstrap.min.js.descarga"></script>
+<!-- AdminLTE App -->
+
+<script>
+    $(document).ready(function() {
+	$('a[data-confirm]').click(function(ev) {
+		var href = $(this).attr('href');
+		if (!$('#dataConfirmModal').length) {
+			$('body').append('<div id="dataConfirmModal" class="modal" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 id="dataConfirmLabel">Please Confirm</h3></div><div class="modal-body"></div><div class="modal-footer"><button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button><a class="btn btn-primary" id="dataConfirmOK">OK</a></div></div>');
+		} 
+		$('#dataConfirmModal').find('.modal-body').text($(this).attr('data-confirm'));
+		$('#dataConfirmOK').attr('href', href);
+		$('#dataConfirmModal').modal({show:true});
+		return false;
+	});
+});
+    
+    
+</script>
+<script src="./VAS _ Administrativo_files/app.min.js.descarga"></script>
+
+<!-- page script -->
+<script>
+  $(function () {
+    $('#clinicas-table').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true
+    });
+  });
+</script>
+
+
+</body></html>
