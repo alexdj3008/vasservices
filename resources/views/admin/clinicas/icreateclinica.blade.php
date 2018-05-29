@@ -57,6 +57,7 @@
                         <label >Correo</label>
                         <input name='email' value="{{old('email')}}" type="email" placeholder="Ingrese el correo de la clínica" class="form-control" required autofocus>
                     </div>
+                    
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
@@ -68,6 +69,7 @@
 @stop
 
 @push('scripts')
+
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
     

@@ -51,7 +51,7 @@
                             multiple="multiple" 
                             data-placeholder="Selecciona una o mas clínicas" style="width: 100%;" required autofocus>
                             @foreach($clinicas as $clinica)
-                                <option value="{{$clinica->id}}">{{$clinica->nombre}},{{$clinica->rif}},{{$clinica->estado->nombre}}</option>
+                                <option value="{{$clinica->id}}">{{$clinica->nombre}},{{$clinica->estado->nombre}}</option>
                             @endforeach
                         </select>
                     </div>

@@ -61,6 +61,9 @@
                         <input name='email' value="{{$clinica->email}}" type="email" placeholder="Ingrese el correo de la clínica" class="form-control" required autofocus>
                     </div>
                     <div class="form-group">
+                        <div class="dropzone"></div>
+                    </div>
+                    <div class="form-group">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
@@ -70,11 +73,32 @@
 </div>    
 @stop
 
+@push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/dropzone.css">
+@endpush
+
 @push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
     
     CKEDITOR.replace('editor');
     
+    var myDropzone = new Dropzone('.dropzone',{
+        url:'{{route('admin.clinica.storefoto',$clinica)}}',
+        acceptedFiles:'image/*',
+        paramName:'foto',
+        maxFilesize: 2 ,
+        maxFiles:1,
+        headers:{
+            'X-CSRF-TOKEN':'{{csrf_token()}}'
+        },
+        dictDefaultMessage:'Arrastra una foto aquí para subirla'
+    });
+    myDropzone.on('error',function(file,res){
+        console.log(res);
+    })
+
+    Dropzone.autoDiscover=false;
 </script>
 @endpush

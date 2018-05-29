@@ -42,6 +42,13 @@ class ClinicasController extends Controller
         $clinicas=Clinica::where("estatus","=","A")->get();
         return view('admin.clinicas.index',compact('clinicas'))->with('flash','Clinica creada');
     }
+    public function storefoto(Clinica $clinica)
+    {
+        $this->validate(request(),[
+            'foto'=>'image'
+        ]);
+        $foto=request()->file('foto');
+    }
     public function edit(Clinica $clinica)
     {
         $estados=Estado::all();
