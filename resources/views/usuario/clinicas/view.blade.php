@@ -10,7 +10,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-lg-6 about-img">
-                    <img src="http://localhost/vas/public/img/clinica.jpg" alt="">
+                    <img src="{{url($clinica->imagen)}}" alt="">
                   </div>
         
                   <div class="col-lg-6 content">

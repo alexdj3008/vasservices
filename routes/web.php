@@ -33,7 +33,7 @@ Route::group(['prefix' => 'paciente',
 //fin de rutas de paciente logueado
 Route::group(['prefix' => 'admin',
     'namespace' => 'Admin',
-    'middleware' => ['role:Admin']],
+    'middleware' => ['auth','role:Admin']],
     function () {
         //Pagina principal de administrador
         Route::get('/', 'AdminController@index')->name('dashboard');

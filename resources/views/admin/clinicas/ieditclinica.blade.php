@@ -84,7 +84,7 @@
     
     CKEDITOR.replace('editor');
     
-    var myDropzone = new Dropzone('.dropzone',{
+    var myDropzone =  new Dropzone('.dropzone',{
         url:'{{route('admin.clinica.storefoto',$clinica)}}',
         acceptedFiles:'image/*',
         paramName:'foto',
@@ -97,7 +97,8 @@
     });
     myDropzone.on('error',function(file,res){
         console.log(res);
-    })
+            
+    });
 
     Dropzone.autoDiscover=false;
 </script>

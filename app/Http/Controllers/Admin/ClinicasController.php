@@ -7,6 +7,7 @@ use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Clinica;
 use App\Estado;
+use Illuminate\Support\Facades\Storage;
 
 class ClinicasController extends Controller
 {
@@ -47,7 +48,9 @@ class ClinicasController extends Controller
         $this->validate(request(),[
             'foto'=>'image'
         ]);
-        $foto=request()->file('foto');
+        $foto=request()->file('foto')->store('public');
+        $clinica->imagen=Storage::url($foto);
+        $clinica->save();
     }
     public function edit(Clinica $clinica)
     {
@@ -68,6 +71,7 @@ class ClinicasController extends Controller
         $clinica->email=$request->get('email');
         $clinica->estatus="A";
         $clinica->save();
+        $clinicas=Clinica::where("estatus","=","A")->get();
         return view('admin.clinicas.index',compact('clinicas'))->with('flash','Clinica modificada');
     }
     public function delete(Clinica $clinica,Request $request)

@@ -21,6 +21,7 @@ class CreateClinicasTable extends Migration
             $table->unsignedInteger('estado_id');
             $table->mediumText('direccion');
             $table->String('email');
+            $table->String('imagen')->nullable();
             $table->char('estatus');
             $table->timestamps();
         });
