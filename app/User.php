@@ -6,6 +6,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Paciente;
+use App\Cirujano;
 class User extends Authenticatable
 {
     use Notifiable,HasRoles;
@@ -27,8 +28,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password']=bcrypt($password);
+    }
+
     public function paciente()
     {
         return $this->has(Paciente::class);
+    }
+
+    public function cirujano()
+    {
+        return $this->has(Cirujano::class);
     }
 }

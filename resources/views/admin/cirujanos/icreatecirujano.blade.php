@@ -20,15 +20,15 @@
                 {{csrf_field()}}    
                 <div class="box-body">
                     <div class="form-group">
-                        <label >Nombre del Cirujano</label>
-                        <input name='nombre' placeholder="" class="form-control" required autofocus>
+                        <label >Nombre completo del Cirujano</label>
+                        <input name='name' placeholder="" class="form-control" required autofocus>
                     </div>
                     
                     <div class="form-group">
-                        <label >Breve descripción del tipo del cirujano</label>
-                        <textarea id="editor" rows="10" name='descripcion'  class="form-control"></textarea>
+                        <label >Correo del Cirujano</label>
+                        <input type="email" name='email' placeholder="" class="form-control" required autofocus>
                     </div>
-                    
+                    <span class="help-block">La contraseña será generada automaticamente y enviada por correo</span>
                 </div>
             </div>
         </div>

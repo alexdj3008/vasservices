@@ -71,8 +71,7 @@ class ClinicasController extends Controller
         $clinica->email=$request->get('email');
         $clinica->estatus="A";
         $clinica->save();
-        $clinicas=Clinica::where("estatus","=","A")->get();
-        return view('admin.clinicas.index',compact('clinicas'))->with('flash','Clinica modificada');
+        return back()->with('flash','Clinica modificada');
     }
     public function delete(Clinica $clinica,Request $request)
     {

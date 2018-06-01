@@ -89,6 +89,7 @@
         acceptedFiles:'image/*',
         paramName:'foto',
         maxFilesize: 2 ,
+        addRemoveLinks:true,
         maxFiles:1,
         headers:{
             'X-CSRF-TOKEN':'{{csrf_token()}}'

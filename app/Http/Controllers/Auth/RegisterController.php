@@ -73,7 +73,7 @@ class RegisterController extends Controller
         $user= new User;
         $user->name=$data['name'];
         $user->email=$data['email'];
-        $user->password= Hash::make($data['password']);
+        $user->password= $data['password'];
         $user->save();
         
         $paciente=new Paciente;

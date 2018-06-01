@@ -10,6 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+
+// Como se ve el correo
+Route::get('email', function () {
+    return new App\Mail\LoginCredentials('alexj_1106@hotmail.com','asd123');
+});
+
 //rutas a las que puede acceder un usuario invitado
 Route::get('/', 'PagesController@home')->name('home');
 Route::get('/clinicas', 'PagesController@clinicas')->name('clinicas');
@@ -31,9 +37,11 @@ Route::group(['prefix' => 'paciente',
         Route::put('update/{user}', 'PacienteController@update')->name('paciente.datos.update');
     });
 //fin de rutas de paciente logueado
+
+//Rutas del usuario administrador
 Route::group(['prefix' => 'admin',
     'namespace' => 'Admin',
-    'middleware' => ['auth','role:Admin']],
+    'middleware' => ['auth','role:admin']],
     function () {
         //Pagina principal de administrador
         Route::get('/', 'AdminController@index')->name('dashboard');
@@ -78,10 +86,12 @@ Route::group(['prefix' => 'admin',
 
     });
 
+//Fin de Rutas del usuario administrador    
+
 //Seccion Médica
 Route::group(['prefix' => 'medico',
     'namespace' => 'Medico',
-    'middleware' => 'auth'],
+    'middleware' => ['auth','role:medico']],
     function () {
         //Pagina principal de administrador
         Route::get('/', 'MedicoController@index')->name('medico.dashboard');

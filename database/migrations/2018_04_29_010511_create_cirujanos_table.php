@@ -15,8 +15,9 @@ class CreateCirujanosTable extends Migration
     {
         Schema::create('cirujanos', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('especialidad_id');
             $table->String('telefono')->nullable();
-            $table->integer('especialidad_id');
             $table->Text('descripcion')->nullable();
             $table->char('estatus');
             $table->timestamps();
