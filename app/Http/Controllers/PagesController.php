@@ -27,6 +27,7 @@ class PagesController extends Controller
 
     public function clinica(Clinica $clinica)
     {
+        
         return view('usuario.clinicas.view',compact('clinica'));
     }
     public function tipocirugia(TipoCirugia $tratamiento)

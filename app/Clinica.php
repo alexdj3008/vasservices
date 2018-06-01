@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clinica extends Model
 {
-    protected $guarded=[];
+    protected $guarded = [];
 
-    public function estado(){
+    public function estado()
+    {
         return $this->belongsTo(Estado::class);
     }
     public function quirofanos()
@@ -18,5 +19,9 @@ class Clinica extends Model
     public function tratamientos()
     {
         return $this->belongsToMany(TipoCirugia::class);
+    }
+    public function cirujanos()
+    {
+        return $this->belongsToMany(Cirujano::class);
     }
 }

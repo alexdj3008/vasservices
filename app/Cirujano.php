@@ -16,4 +16,8 @@ class Cirujano extends Model
     {
         return $this->belongsToMany(Clinica::class);
     }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }
