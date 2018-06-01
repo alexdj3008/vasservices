@@ -46,15 +46,15 @@ class LoginController extends Controller
 
     public function redirectPath()
     {
-        if(auth()->user()->hasRole('Paciente'))
+        if(auth()->user()->hasRole('paciente'))
         {
             return '/';
         }
-        if(auth()->user()->hasRole('Admin'))
+        if(auth()->user()->hasRole('admin'))
         {
             return '/admin';
         }
-        if(auth()->user()->hasRole('Medico'))
+        if(auth()->user()->hasRole('medico'))
         {
             return '/medico';
         }

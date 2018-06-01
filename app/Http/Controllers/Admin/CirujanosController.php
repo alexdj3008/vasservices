@@ -8,6 +8,7 @@ use App\Cirujano;
 use App\User;
 use App\Especialidad;
 use App\Events\UsuarioFueCreado;
+use Spatie\Permission\Models\Role;
 class CirujanosController extends Controller
 {
     public function index()
@@ -36,11 +37,13 @@ class CirujanosController extends Controller
         //Instancia de cirujano y user
         $cirujano=new Cirujano;
         $user=User::create($data);
+        $user->assignRole(Role::find(2));
         //Aignación de datos a cirujano
         $cirujano->user_id=$user->id;
         $cirujano->especialidad_id=$request->get('especialidad_id');
         $cirujano->estatus="A";
         $cirujano->save();
+        
         //Envio de credenciales
         UsuarioFueCreado::dispatch($user,$data['password']);
         return redirect()->route('admin.cirujanos.index')->with('flash','Cirujano creado');

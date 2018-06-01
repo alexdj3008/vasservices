@@ -13,7 +13,7 @@
 
 // Como se ve el correo
 Route::get('email', function () {
-    return new App\Mail\LoginCredentials('alexj_1106@hotmail.com','asd123');
+    return new App\Mail\LoginCredentials(App\User::first(),'asd123');
 });
 
 //rutas a las que puede acceder un usuario invitado

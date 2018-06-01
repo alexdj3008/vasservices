@@ -6,7 +6,7 @@ Utiliza estas credenciales para acceder al sistema.
 @component('mail::table')
     | Email | Contraseña |
     |:----------|:------------|
-    | {{$user}} | {{$password}} |
+    | {{$user->email}} | {{$password}} |
 @endcomponent
 
 @component('mail::button', ['url' => url('login')])

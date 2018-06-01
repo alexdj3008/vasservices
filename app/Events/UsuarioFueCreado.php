@@ -23,8 +23,8 @@ class UsuarioFueCreado
      */
     public function __construct($user,$password)
     {
-        $this->$user=$user;
-        $this->$password=$password;
+        $this->user=$user;
+        $this->password=$password;
          
     }
 

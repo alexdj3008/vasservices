@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div class="container">
-        <a class="btn-get-started scrollto"  href="{{route('login')}}">Volver atrás</a>
+            <a class="btn-get-started scrollto" onclick="history.back()" href="#">Volver atrás</a>
         </div>
     </div>
 @endsection

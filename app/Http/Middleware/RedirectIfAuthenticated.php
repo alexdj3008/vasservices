@@ -18,15 +18,15 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            if(auth()->user()->hasRole('Paciente'))
+            if(auth()->user()->hasRole('paciente'))
             {
                 return redirect('/');
             }
-            if(auth()->user()->hasRole('Admin'))
+            if(auth()->user()->hasRole('admin'))
             {
                 return redirect('admin');
             }
-            if(auth()->user()->hasRole('Medico'))
+            if(auth()->user()->hasRole('medico'))
             {
                 return redirect('medico');
             }

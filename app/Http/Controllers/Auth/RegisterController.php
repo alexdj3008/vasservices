@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Paciente;
+use Spatie\Permission\Models\Role;
 class RegisterController extends Controller
 {
     /*
@@ -75,6 +76,7 @@ class RegisterController extends Controller
         $user->email=$data['email'];
         $user->password= $data['password'];
         $user->save();
+        $user->assignRole(Role::find(3));
         
         $paciente=new Paciente;
         $paciente->user_id=$user->id;
