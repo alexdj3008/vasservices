@@ -32,6 +32,12 @@
                         <label >Breve descripción de la Clínica</label>
                         <textarea id="editor"  rows="10" name='descripcion' placeholder="Ingrese una breve descripción de la clínica" class="form-control">{{$clinica->descripcion}}</textarea>
                     </div>
+                    <span class="help-block">Si desea mantener la foto actual, dejar en blanco la zona de imagen</span>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img-responsive" src="{{url($clinica->imagen)}}" alt="">
+                        </div>
+                    </div>
                     
                 </div>
             </div>
@@ -61,11 +67,13 @@
                         <input name='email' value="{{$clinica->email}}" type="email" placeholder="Ingrese el correo de la clínica" class="form-control" required autofocus>
                     </div>
                     <div class="form-group">
+                        <label>Imagen</label>
                         <div class="dropzone"></div>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -94,7 +102,7 @@
         headers:{
             'X-CSRF-TOKEN':'{{csrf_token()}}'
         },
-        dictDefaultMessage:'Arrastra una foto aquí para subirla'
+        dictDefaultMessage:'Arrastra una foto aquí o presiona para seleccionar'
     });
     myDropzone.on('error',function(file,res){
         console.log(res);
