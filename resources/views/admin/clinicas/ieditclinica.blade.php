@@ -79,7 +79,7 @@
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.js"></script>
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="http://localhost/vas/public/adminlte/plugins/ckeditor/ckeditor.js"></script>
 <script>
     
     CKEDITOR.replace('editor');

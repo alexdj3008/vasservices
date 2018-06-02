@@ -41,7 +41,7 @@ class ClinicasController extends Controller
         $clinica->estatus="A";
         $clinica->save();
         $clinicas=Clinica::where("estatus","=","A")->get();
-        return view('admin.clinicas.index',compact('clinicas'))->with('flash','Clinica creada');
+        return redirect()->route('admin.clinicas.index',compact('clinicas'))->with('flash','Registro realizado con éxito');
     }
     public function storefoto(Clinica $clinica)
     {
@@ -71,13 +71,13 @@ class ClinicasController extends Controller
         $clinica->email=$request->get('email');
         $clinica->estatus="A";
         $clinica->save();
-        return back()->with('flash','Clinica modificada');
+        return back()->with('flash','Clinica modificada con éxito');
     }
     public function delete(Clinica $clinica,Request $request)
     {
         $clinica->estatus="E";
         $clinica->save();
-        return back()->with('flash','Clinica Eliminada');
+        return back()->with('flash','Clinica eliminada con éxito');
     }
 }
 

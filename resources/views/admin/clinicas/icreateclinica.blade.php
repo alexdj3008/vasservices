@@ -33,6 +33,7 @@
                         <label >Breve descripción de la Clínica</label>
                         <textarea id="editor" rows="10" name='descripcion' placeholder="Ingrese una breve descripción de la clínica" class="form-control">{{old('descripcion')}}</textarea>
                     </div>
+                    <span class="help-block">Para agregar una imagen representativa de la clínica, primero debe crear el registro y luego editarlo</span>
                     
                 </div>
             </div>
@@ -57,7 +58,6 @@
                         <label >Correo</label>
                         <input name='email' value="{{old('email')}}" type="email" placeholder="Ingrese el correo de la clínica" class="form-control" required autofocus>
                     </div>
-                    
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
@@ -70,7 +70,7 @@
 
 @push('scripts')
 
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="http://localhost/vas/public/adminlte/plugins/ckeditor/ckeditor.js"></script>
 <script>
     
     CKEDITOR.replace('editor');
