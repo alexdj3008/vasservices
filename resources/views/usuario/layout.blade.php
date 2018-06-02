@@ -24,7 +24,7 @@
   <link href="http://localhost/vas/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="http://localhost/vas/public/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
   <link href="http://localhost/vas/public/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-
+  @stack('styles')
   <!-- Main Stylesheet File -->
   <link href="http://localhost/vas/public/css/style.css" rel="stylesheet">
 
@@ -121,7 +121,7 @@
   <script src="http://localhost/vas/public/lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="http://localhost/vas/public/lib/magnific-popup/magnific-popup.min.js"></script>
   <script src="http://localhost/vas/public/lib/sticky/sticky.js"></script>
-  
+  @stack('scripts')
   
 
   <!-- Template Main Javascript File -->

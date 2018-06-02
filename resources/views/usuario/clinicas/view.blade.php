@@ -86,7 +86,7 @@ Our Team Section
           </div>
   
         </div>
-      </section><!-- #call-to-action -->
+    </section><!-- #call-to-action -->
   
   
   <!--==========================
@@ -99,7 +99,7 @@ Our Team Section
         @foreach($clinica->cirujanos as $cirujano)
           
           <div id="{{$cirujano->especialidad->descripcion}}" class="col-lg-3 col-md-6">
-            <a href="{{route('usuario.tratamiento.view',$cirujano)}}">
+            <a href="{{route('usuario.cirujano.view',$cirujano)}}">
             <div class="member">
               <div class="pic"><img src="/vas/public/img/cirugia.jpg" alt=""></div>
               <div class="details">

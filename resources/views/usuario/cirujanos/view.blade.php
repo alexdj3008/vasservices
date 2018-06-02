@@ -14,7 +14,7 @@
                   </div>
         
                   <div class="col-lg-6 content">
-                    <h2>{{$cirujano->nombre}}</h2>
+                    <h2>{{$cirujano->user->name}}</h2>
                     <h3>{{$cirujano->especialidad->descripcion}}</h3>
                     <p>{!!$cirujano->descripcion!!}</p>
                   
