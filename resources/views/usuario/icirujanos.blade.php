@@ -62,7 +62,7 @@
                 <div class="member">
                   <div class="pic"><img src="img/cirujano.jpg" alt=""></div>
                   <div class="details">
-                    <h4>{{$cirujano->nombre}}</h4>
+                    <h4>{{$cirujano->user->name}}</h4>
                     <span>{{$cirujano->especialidad->descripcion}}</span>
                   </div>
                 </div>

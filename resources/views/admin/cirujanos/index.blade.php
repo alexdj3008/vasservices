@@ -32,13 +32,13 @@
         @foreach($cirujanos as $cirujano)
         <tr>
           <td>{{$cirujano->id}}</td>
-          <td>{{$cirujano->nombre}}</td>
+          <td>{{$cirujano->user->name}}</td>
           <td>{{$cirujano->especialidad->descripcion}}</td>
           <td>
 
           <a href="{{route('admin.cirujano.edit',$cirujano)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Modificar</a>
           <form action="{{route('admin.cirujano.delete',$cirujano)}}" onsubmit="return confirm('Seguro que quiere eliminar el registro?')" method="POST" style="display:inline">
-              {{csrf_field()}} {{method_field('PUT')}}
+              {{csrf_field()}} {{method_field('DELETE')}}
             <button href="" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Eliminar</button>
           </form>
           </td>  

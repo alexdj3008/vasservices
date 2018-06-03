@@ -62,7 +62,13 @@
                   <div class="col-lg-3 col-md-6">
                     <a href="{{route('usuario.clinica.view',$clinica)}}">
                         <div class="member">
-                          <div class="pic"><img src="img/clinica.jpg" alt=""></div>
+                          <div class="pic">
+                            @if (is_null($clinica->imagen))
+                              <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                            @else
+                              <img src="{{url($clinica->imagen)}}" alt="">
+                            @endif
+                          </div>
                           <div class="details">
                             <h4>{{$clinica->nombre}}</h4>
                             <span>{{$clinica->direccion}}</span>

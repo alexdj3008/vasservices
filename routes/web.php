@@ -82,7 +82,7 @@ Route::group(['prefix' => 'admin',
         Route::post('cirujanos', 'CirujanosController@store')->name('admin.cirujanos.store');
         Route::get('cirujanos/{cirujano}', 'CirujanosController@edit')->name('admin.cirujano.edit');
         Route::put('cirujanos/{cirujano}', 'CirujanosController@update')->name('admin.cirujano.update');
-        Route::put('cirujanos/delete/{cirujano}', 'CirujanosController@delete')->name('admin.cirujano.delete');
+        Route::delete('cirujanos/delete/{cirujano}', 'CirujanosController@delete')->name('admin.cirujano.delete');
 
     });
 
