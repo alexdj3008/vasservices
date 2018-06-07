@@ -80,8 +80,6 @@ Route::group(['prefix' => 'admin',
         Route::get('cirujanos', 'CirujanosController@listadocirujanos')->name('admin.cirujanos.index');
         Route::get('cirujanos/create', 'CirujanosController@create')->name('admin.cirujanos.create');
         Route::post('cirujanos', 'CirujanosController@store')->name('admin.cirujanos.store');
-        Route::get('cirujanos/{cirujano}', 'CirujanosController@edit')->name('admin.cirujano.edit');
-        Route::put('cirujanos/{cirujano}', 'CirujanosController@update')->name('admin.cirujano.update');
         Route::delete('cirujanos/delete/{cirujano}', 'CirujanosController@delete')->name('admin.cirujano.delete');
 
     });
@@ -93,9 +91,12 @@ Route::group(['prefix' => 'medico',
     'namespace' => 'Medico',
     'middleware' => ['auth','role:medico']],
     function () {
-        //Pagina principal de administrador
-        Route::get('/', 'MedicoController@index')->name('medico.dashboard');
-
+        //Pagina principal del médico
+        Route::get('/', 'CirujanoController@index')->name('medico.dashboard');
+        Route::get('cirujanos/{user}', 'CirujanoController@edit')->name('medico.cirujano.edit');
+        Route::put('cirujanos/{user}', 'CirujanoController@update')->name('medico.cirujano.update');
+        Route::post('cirujano/{user}/foto', 'CirujanoController@storefoto')->name('medico.cirujano.storefoto');
+        
     });
 
 // Authentication Routes...

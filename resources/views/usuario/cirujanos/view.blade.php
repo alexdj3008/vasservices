@@ -7,7 +7,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 about-img">
-          <img src="http://localhost/vas/public/img/cirugia.jpg" alt="">
+            @if (is_null($cirujano->imagen))
+              <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+            @else
+              <img src="{{url($cirujano->imagen)}}" alt="">
+           @endif
         </div>
         <div class="col-lg-6 content">
           <h2>{{$cirujano->user->name}}</h2>

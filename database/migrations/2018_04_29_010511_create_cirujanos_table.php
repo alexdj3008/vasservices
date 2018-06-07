@@ -19,6 +19,7 @@ class CreateCirujanosTable extends Migration
             $table->unsignedInteger('especialidad_id');
             $table->String('telefono')->nullable();
             $table->Text('descripcion')->nullable();
+            $table->String('imagen')->nullable();
             $table->char('estatus');
             $table->timestamps();
         });

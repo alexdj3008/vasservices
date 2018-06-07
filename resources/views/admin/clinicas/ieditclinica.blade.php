@@ -35,7 +35,11 @@
                     <span class="help-block">Si desea mantener la foto actual, dejar en blanco la zona de imagen</span>
                     <div class="row">
                         <div class="col-md-3">
-                            <img class="img-responsive" src="{{url($clinica->imagen)}}" alt="">
+                            @if (is_null($clinica->imagen))
+                                <img class="img-responsive" src="http://localhost/vas/public/img/noimagen.png" alt=""> 
+                            @else
+                                <img class="img-responsive" src="{{url($clinica->imagen)}}" alt="">
+                            @endif
                         </div>
                     </div>
                     
@@ -87,7 +91,7 @@
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.js"></script>
-<script src="http://localhost/vas/public/adminlte/plugins/ckeditor/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
     
     CKEDITOR.replace('editor');

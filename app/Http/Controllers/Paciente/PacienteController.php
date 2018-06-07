@@ -11,7 +11,6 @@ class PacienteController extends Controller
 {
     public function edit(User $user)
     {
-        
         return view('usuario.perfil.ipaciente',compact('user'));
     }
     public function update(User $user,Request $request)

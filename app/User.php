@@ -41,6 +41,6 @@ class User extends Authenticatable
 
     public function cirujano()
     {
-        return $this->has(Cirujano::class);
+        return $this->hasOne(Cirujano::class);
     }
 }
