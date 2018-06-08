@@ -35,6 +35,7 @@ Route::group(['prefix' => 'paciente',
     function () {
         Route::get('editar/{user}', 'PacienteController@edit')->name('paciente.datos.edit');
         Route::put('update/{user}', 'PacienteController@update')->name('paciente.datos.update');
+        Route::post('update/{user}/foto', 'PacienteController@storefoto')->name('paciente.datos.storefoto');
     });
 //fin de rutas de paciente logueado
 

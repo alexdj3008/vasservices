@@ -90,7 +90,7 @@ desired effect
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
                 @if (is_null(auth()->user()->cirujano->imagen))
-                  <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                  <img src="http://localhost/vas/public/img/noimagen.png" class="user-image" alt="User Image">   
                 @else
                   <img src="{{url(auth()->user()->cirujano->imagen)}}" class="user-image" alt="User Image">
                 @endif
@@ -101,7 +101,7 @@ desired effect
                 <!-- The user image in the menu -->
                 <li class="user-header">
                   @if (is_null(auth()->user()->cirujano->imagen))
-                    <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                    <img src="http://localhost/vas/public/img/noimagen.png" width="100%" alt="">   
                   @else
                     <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
                   @endif
@@ -146,7 +146,7 @@ desired effect
         <div class="user-panel">
           <div class="pull-left image">
             @if (is_null(auth()->user()->cirujano->imagen))
-              <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+              <img src="http://localhost/vas/public/img/noimagen.png" width="100%" alt="">   
             @else
               <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
             @endif

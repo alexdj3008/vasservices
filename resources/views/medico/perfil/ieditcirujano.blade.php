@@ -127,7 +127,7 @@
         maxFilesize: 2,
         addRemoveLinks: true,
         maxFiles: 1,
-        headers: {
+        headers: { 
             'X-CSRF-TOKEN': '{{csrf_token()}}'
         },
         dictDefaultMessage: 'Arrastra una foto aquí o presiona para seleccionar'

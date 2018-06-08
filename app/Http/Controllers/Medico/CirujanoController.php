@@ -27,7 +27,7 @@ class CirujanoController extends Controller
     public function update(User $user, Request $request)
     {
         $cirujano=new Cirujano;
-        
+         
         $this->validate($request,[
             'name'=>'required',
             'email' => Rule::unique('users')->ignore($user->id)

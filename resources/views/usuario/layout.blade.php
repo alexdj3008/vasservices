@@ -25,6 +25,7 @@
   <link href="http://localhost/vas/public/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
   <link href="http://localhost/vas/public/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   @stack('styles')
+  
   <!-- Main Stylesheet File -->
   <link href="http://localhost/vas/public/css/style.css" rel="stylesheet">
 

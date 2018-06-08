@@ -53,7 +53,7 @@
   
             <div class="col-lg-6 content">
               
-              <h2>¿Porqué confiar en VAS?</h2>
+              <h2>¿Por qué confiar en VAS?</h2>
               
               <ul>
                 <li><i class="ion-android-checkmark-circle"></i> Total Transparencia.</li>

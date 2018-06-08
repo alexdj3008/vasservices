@@ -12,7 +12,15 @@ body {
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
-
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 a {
   color: #50d8af;
   transition: 0.5s;
