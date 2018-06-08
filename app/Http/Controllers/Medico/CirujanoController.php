@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Cirujano;
+use App\Clinica;
 use App\User;
 use App\Especialidad;
 use Illuminate\Support\Facades\Storage;
@@ -20,26 +21,28 @@ class CirujanoController extends Controller
     public function edit(User $user)
     {
         $especialidades = Especialidad::all();
-        
-        return view('medico.perfil.ieditcirujano', compact('user', 'especialidades'));
+        $clinicas=Clinica::where("estatus","=","A")->get();
+        return view('medico.perfil.ieditcirujano', compact('user', 'especialidades','clinicas'));
     }
     public function update(User $user, Request $request)
     {
-        $cirujano=$user->cirujano;
+        $cirujano=new Cirujano;
+        
         $this->validate($request,[
             'name'=>'required',
-            'email' => Rule::unique('users')->ignore($user->email)
-           ]);
+            'email' => Rule::unique('users')->ignore($user->id)
+            ]);
         $user->name=$request->get('name');
         if($request->filled('password'))
         {
             $user->password=$request->get('password');
         }            
-        $cirujano->especialidad_id = $request->get('especialidad');
+        $user->cirujano->especialidad_id = $request->get('especialidad');
         // $cirujano->telefono = $request->get('telefono');
-        $cirujano->descripcion = $request->get('descripcion');
+        $user->cirujano->descripcion = $request->get('descripcion');
+        $user->cirujano->clinicas()->sync($request->get('clinicas'));
+        $cirujano=$user->cirujano;
         $cirujano->save();
-        
         return back()->with('flash', 'Cirujano modificado');
     }
 

@@ -75,7 +75,6 @@
 
 @push('styles')
 <link rel="stylesheet" href="http://localhost/vas/public/adminlte/plugins/select2/select2.min.css">
-<link rel="stylesheet" href="http://localhost/vas/public/adminlte/plugins/select2/select2.min.css">
 @endpush
 
 @push('scripts')

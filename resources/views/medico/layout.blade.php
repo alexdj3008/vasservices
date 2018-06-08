@@ -64,7 +64,7 @@ desired effect
     <header class="main-header">
 
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <a href="{{route('medico.dashboard')}}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
           <b>V</b>AS</span>
@@ -89,19 +89,24 @@ desired effect
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="http://localhost/vas/public/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                @if (is_null(auth()->user()->cirujano->imagen))
+                  <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                @else
+                  <img src="{{url(auth()->user()->cirujano->imagen)}}" class="user-image" alt="User Image">
+                @endif
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{{auth()->user()->name}}</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="http://localhost/vas/public/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                  <p>
-                    {{auth()->user()->name}} - Web Developer
-                    <small>Member since Nov. 2012</small>
-                  </p>
+                  @if (is_null(auth()->user()->cirujano->imagen))
+                    <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                  @else
+                    <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
+                  @endif
+                  <p>{{auth()->user()->name}}</p>
+                  <p>{{auth()->user()->cirujano->especialidad->descripcion}}</p>
                 </li>
                 <!-- Menu Body -->
                 <li class="user-body">
@@ -113,7 +118,7 @@ desired effect
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="{{route('medico.cirujano.edit',auth()->user())}}" class="btn btn-default btn-flat">Editar Datos</a>
+                    <a href="{{route('medico.cirujano.edit',auth()->user())}}" class="btn btn-default btn-flat">Editar Información</a>
                   </div>
                   <div class="pull-right">
                     <a href="{{route('logout')}}" class="btn btn-default btn-flat">Salir</a>
@@ -140,7 +145,11 @@ desired effect
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="http://localhost/vas/public/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            @if (is_null(auth()->user()->cirujano->imagen))
+              <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+            @else
+              <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
+            @endif
           </div>
           <div class="pull-left info">
             <p>{{auth()->user()->name}}</p>
