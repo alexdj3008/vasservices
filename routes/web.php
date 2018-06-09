@@ -97,7 +97,13 @@ Route::group(['prefix' => 'medico',
         Route::get('cirujanos/{user}', 'CirujanoController@edit')->name('medico.cirujano.edit');
         Route::put('cirujanos/{user}', 'CirujanoController@update')->name('medico.cirujano.update');
         Route::post('cirujano/{user}/foto', 'CirujanoController@storefoto')->name('medico.cirujano.storefoto');
-        
+        //Rutas de historias medicas
+        Route::get('historias', 'HistoriasController@listadohistorias')->name('medico.historias.index');
+        Route::get('historias/create', 'HistoriasController@create')->name('medico.historias.create');
+        Route::post('historias', 'HistoriasController@store')->name('medico.historias.store');
+        Route::get('historia/{historia}', 'HistoriasController@edit')->name('medico.historia.edit');
+        Route::get('historia/ver/{historia}', 'HistoriasController@view')->name('medico.historia.view');
+        Route::put('medico/{historia}', 'HistoriasController@update')->name('medico.historia.update');
     });
 
 // Authentication Routes...

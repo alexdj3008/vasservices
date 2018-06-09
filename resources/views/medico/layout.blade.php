@@ -101,7 +101,7 @@ desired effect
                 <!-- The user image in the menu -->
                 <li class="user-header">
                   @if (is_null(auth()->user()->cirujano->imagen))
-                    <img src="http://localhost/vas/public/img/noimagen.png" width="100%" alt="">   
+                    <img src="http://localhost/vas/public/img/noimagen.png" class="img-circle" alt="User Image">   
                   @else
                     <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
                   @endif
@@ -146,7 +146,7 @@ desired effect
         <div class="user-panel">
           <div class="pull-left image">
             @if (is_null(auth()->user()->cirujano->imagen))
-              <img src="http://localhost/vas/public/img/noimagen.png" width="100%" alt="">   
+              <img src="http://localhost/vas/public/img/noimagen.png" class="img-circle" alt="User Image">   
             @else
               <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
             @endif
@@ -313,7 +313,7 @@ desired effect
   <!-- page script -->
   <script>
     $(function () {
-      $('#clinicas-table').DataTable({
+      $('#historias-table').DataTable({
         "paging": true,
         "lengthChange": true,
         "searching": true,
@@ -322,6 +322,7 @@ desired effect
         "autoWidth": true
       });
     });
+
   </script>
 </body>
 

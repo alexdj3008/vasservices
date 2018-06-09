@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Paciente;
+use App\HistoriaMedica;
 use Spatie\Permission\Models\Role;
 class RegisterController extends Controller
 {
@@ -82,6 +83,11 @@ class RegisterController extends Controller
         $paciente->user_id=$user->id;
         $paciente->estatus='A';
         $paciente->save();
+        
+        $historia=new HistoriaMedica;
+        $historia->paciente_id=$paciente->id;
+        $historia->estatus='A';
+        $historia->save();
         return $user;
         
         
