@@ -100,7 +100,6 @@ Route::group(['prefix' => 'medico',
         //Rutas de historias medicas
         Route::get('historias', 'HistoriasController@listadohistorias')->name('medico.historias.index');
         Route::get('historias/create', 'HistoriasController@create')->name('medico.historias.create');
-        Route::post('historias', 'HistoriasController@store')->name('medico.historias.store');
         Route::get('historia/{historia}', 'HistoriasController@edit')->name('medico.historia.edit');
         Route::get('historia/ver/{historia}', 'HistoriasController@view')->name('medico.historia.view');
         Route::put('medico/{historia}', 'HistoriasController@update')->name('medico.historia.update');

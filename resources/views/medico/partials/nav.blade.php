@@ -15,7 +15,7 @@
   </li>
   <li class="treeview {{request()->is('medico/historias*') ? 'active' : ''}}">
     <a href="#">
-      <i class="fas fa-hospital"></i>
+      <i class="fa fa-file-text-o"></i>
       <span>Historias Médicas</span>
       <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
