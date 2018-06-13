@@ -10,4 +10,8 @@ class Especialidad extends Model
     {
         return $this->hasMany(TipoCirugia::class);
     }
+    public function cirujanos()
+    {
+        return $this->hasMany(Cirujano::class);
+    }
 }

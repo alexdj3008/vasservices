@@ -17,6 +17,7 @@ class CreateServiciosTable extends Migration
             $table->increments('id');
             $table->String('nombre');
             $table->Text('descripcion')->nullable();
+            $table->String('imagen')->nullable();
             $table->char('estatus');
             $table->timestamps();
         });

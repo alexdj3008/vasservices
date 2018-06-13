@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Servicios;
+use Illuminate\Support\Facades\Storage;
 class ServiciosController extends Controller
 {
     public function index()
@@ -28,7 +29,7 @@ class ServiciosController extends Controller
         $servicio->descripcion=$request->get('descripcion');
         $servicio->estatus="A";
         $servicio->save();
-        return back()->with('flash','Servicio adicional creado');
+        return back()->with('flash','Servicio registrado');
     }
     public function edit(Servicios $servicio)
     {
@@ -41,6 +42,15 @@ class ServiciosController extends Controller
         $servicio->estatus="A";
         $servicio->save();
         return back()->with('flash','Servicio adicional modificado');
+    }
+    public function storefoto(Servicios $servicio)
+    {
+        $this->validate(request(),[
+            'foto'=>'image'
+        ]);
+        $foto=request()->file('foto')->store('public');
+        $servicio->imagen=Storage::url($foto);
+        $servicio->save();
     }
     public function delete(Servicios $servicio,Request $request)
     {

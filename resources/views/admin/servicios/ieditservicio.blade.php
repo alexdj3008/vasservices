@@ -35,7 +35,20 @@
         <div class="col-md-4">
             <div class="box box-primary">
                 <div class="box-body">
-                    
+                    <div class="form-group">
+                        <label>Imagen</label>
+                        <div class="dropzone"></div>
+                    </div>
+                    <span class="help-block">Si desea mantener la foto actual, dejar en blanco la zona de imagen</span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @if (is_null($servicio->imagen))
+                                <img class="img-responsive" src="/img/noimagen.png" alt=""> 
+                            @else
+                                <img class="img-responsive" src="{{url($servicio->imagen)}}" alt="">
+                            @endif
+                        </div>
+                    </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
@@ -46,11 +59,34 @@
 </div>    
 @stop
 
+@push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/dropzone.css">
+@endpush
+
 @push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
     
     CKEDITOR.replace('editor');
+    var myDropzone =  new Dropzone('.dropzone',{
+        url:'{{route('admin.servicio.storefoto',$servicio)}}',
+        acceptedFiles:'image/*',
+        paramName:'foto',
+        maxFilesize: 2 ,
+        addRemoveLinks:true,
+        maxFiles:1,
+        headers:{
+            'X-CSRF-TOKEN':'{{csrf_token()}}'
+        },
+        dictDefaultMessage:'Arrastra una foto aquí o presiona para seleccionar'
+    });
+    myDropzone.on('error',function(file,res){
+        console.log(res);
+            
+    });
+
+    Dropzone.autoDiscover=false;
     
 </script>
 @endpush

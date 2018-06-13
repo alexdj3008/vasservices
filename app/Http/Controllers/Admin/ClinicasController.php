@@ -29,7 +29,7 @@ class ClinicasController extends Controller
     {
         // return Clinica::create($request->all());
         $this->validate($request,[
-         'rif' => 'required|string|max:13|unique:clinicas'
+         'rif' => 'required|string|max:12|unique:clinicas'
         ]);
         $clinica=new Clinica;
         $clinica->nombre=$request->get('nombre');
@@ -71,13 +71,13 @@ class ClinicasController extends Controller
         $clinica->email=$request->get('email');
         $clinica->estatus="A";
         $clinica->save();
-        return back()->with('flash','Clinica modificada con éxito');
+        return back()->with('flash','Clínica modificada con éxito');
     }
     public function delete(Clinica $clinica,Request $request)
     {
         $clinica->estatus="E";
         $clinica->save();
-        return back()->with('flash','Clinica eliminada con éxito');
+        return back()->with('flash','Clínica eliminada con éxito');
     }
 }
 

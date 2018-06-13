@@ -15,7 +15,7 @@
       <div class="row">
       @foreach($estados as $estado)
       <a href="#{{$estado->nombre}}">  
-        <div class="col-lg-6">
+        <div class="col-lg-4">
           <div class="box wow fadeInLeft">
             <div class="icon"><i class="fa fa-bar-chart"></i></div>
             <h4 class="title"><a href="#{{$estado->nombre}}">{{$estado->nombre}}</a></h4>

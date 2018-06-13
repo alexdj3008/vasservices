@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html>
 
 <head>
@@ -310,7 +307,7 @@ desired effect
   @stack('scripts')
   <script src="/adminlte/js/app.min.js"></script>
 
-  <!-- page script -->
+  <!-- script de DataTable usado para los listados -->
   <script>
     $(function () {
       $('#historias-table').DataTable({

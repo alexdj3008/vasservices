@@ -16,15 +16,23 @@
                             <label >Tipo de cirugia</label>
                             <select name="tratamiento" id="" class="form-control" required autofocus>
                                 <option value="">Selecciona el tipo de cirugía</option>
-                                @foreach($tratamientos as $tratamiento)
-                                    <option value="{{$tratamiento->id}}">{{$tratamiento->nombre}}</option>
+                                @foreach ($especialidades as $especialidad)
+                                    <optgroup label="{{$especialidad->descripcion}}">
+                                    @foreach($tratamientos as $tratamiento)
+                                        @if ($tratamiento->especialidad_id==$especialidad->id)
+                                            <option value="{{$tratamiento->id}}">{{$tratamiento->nombre}}</option>    
+                                        @endif
+                                    </optgroup>    
+                                    @endforeach
                                 @endforeach
+                                
                             </select>
                         </div>
                         <div class="form-group">
                             <label >Médico de preferencia</label>
                             <select name="cirujano" id="" class="form-control" required autofocus>
                                 <option value="">Selecciona el médico de preferencia</option>
+                                
                                 @foreach($cirujanos as $cirujano)
                                     <option value="{{$cirujano->id}}">{{$cirujano->user->name}}</option>
                                 @endforeach

@@ -14,10 +14,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
+  <!-- Archivos Bootstrap CSS  -->
   <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
+  <!-- Librerias CSS -->
   <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="/lib/animate/animate.min.css" rel="stylesheet">
   <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
@@ -26,20 +26,15 @@
   <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   @stack('styles')
   
-  <!-- Main Stylesheet File -->
+  <!-- Hoja de estilos principal -->
   <link href="/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: Reveal
-    Theme URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
+  
 </head>
 
 <body id="body">
   <!--==========================
-    Top Bar
+    Barra superior(solo cuando está autenticado un usuario)
   ============================-->
   @if(Auth::guest())
   
@@ -48,7 +43,9 @@
       <div class="container clearfix">
         
         <div class="social-links float-right">
-          <a href="{{route('paciente.datos.edit',auth()->user())}}" class="twitter"><i class="fa fa-user"></i> Editar informacion</a>
+          @if (auth()->user()->hasRole('paciente'))
+            <a href="{{route('paciente.datos.edit',auth()->user())}}" class="twitter"><i class="fa fa-user"></i> Editar informacion</a>
+          @endif  
             Hola! {{auth()->user()->name}}
 
           
@@ -65,8 +62,7 @@
 
       <div id="logo" class="pull-left">
         <h1><a href="{{route('home')}}" class="scrollto">{{config('app.name')}}</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+        
       </div>
 
       <nav id="nav-menu-container">
@@ -88,13 +84,13 @@
           @endif
           
         </ul>
-      </nav><!-- #nav-menu-container -->
+      </nav><!-- Menu de navegación -->
     </div>
-  </header><!-- #header -->
+  </header><!-- Fin del Header -->
 
-  <!--Contenido-->
+  <!--Contenido principal-->
   @yield('content')
-  <!--Fin del contenido-->
+  <!--Fin del contenido principal-->
 
   <!--==========================
     Footer
@@ -111,7 +107,7 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <!-- JavaScript Libraries -->
+  <!-- Librerias JavaScript -->
   <script src="/lib/jquery/jquery.min.js"></script>
   <script src="/lib/jquery/jquery-migrate.min.js"></script>
   <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -125,7 +121,7 @@
   @stack('scripts')
   
 
-  <!-- Template Main Javascript File -->
+  <!-- Archivo Javascript Principal -->
   <script src="/js/main.js"></script>
 
 </body>

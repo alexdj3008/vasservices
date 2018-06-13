@@ -13,7 +13,10 @@
         <a href="{{route('login')}}" class="btn-get-started scrollto">Iniciar sesión</a>
         <a href="{{route('register')}}" class="btn-projects scrollto">Registrarse</a>
         @else
-        <a href="{{route('paciente.citas.create')}}" class="btn-get-started scrollto">Solicitar cita</a>
+          @if (auth()->user()->hasRole('paciente'))
+            <a href="{{route('paciente.citas.create')}}" class="btn-get-started scrollto">Solicitar cita</a>     
+          @endif
+       
        @endif
       </div>
       

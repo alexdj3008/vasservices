@@ -10,8 +10,13 @@
               <div class="container">
                 <div class="row">
                   <div class="col-lg-6 about-img">
-                    <img src="http://localhost/vas/public/img/clinica.jpg" alt="">
+                    @if (is_null($servicio->imagen))
+                      <img src="/img/noimagen.png"  alt="">   
+                    @else
+                      <img src="{{url($servicio->imagen)}}" alt="">
+                    @endif
                   </div>
+                
         
                   <div class="col-lg-6 content">
                     <h2>{{$servicio->nombre}}</h2>

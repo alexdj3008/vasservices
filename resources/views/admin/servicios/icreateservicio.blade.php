@@ -44,7 +44,7 @@
         </div>
     </form>
 </div>    
-@stop
+@stop 
 
 @push('scripts')
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>

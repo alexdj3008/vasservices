@@ -56,6 +56,6 @@ class TipoCirugiasController extends Controller
     {
         $tipocirugia->estatus="E";
         $tipocirugia->save();
-        return back()->with('flash','Tipo de cirugía Eliminada');
+        return back()->with('flash','Tipo de cirugía Eliminada con éxito');
     }
 }

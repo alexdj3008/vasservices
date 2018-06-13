@@ -72,6 +72,7 @@ Route::group(['prefix' => 'admin',
         Route::get('servicios/{servicio}', 'ServiciosController@edit')->name('admin.servicios.edit');
         Route::put('servicios/{servicio}', 'ServiciosController@update')->name('admin.servicios.update');
         Route::put('servicios/delete/{servicio}', 'ServiciosController@delete')->name('admin.servicios.delete');
+        Route::post('servicios/{servicio}/foto', 'ServiciosController@storefoto')->name('admin.servicio.storefoto');
         //Rutas relacionadas con los Quirofanos
         Route::get('quirofanos', 'QuirofanosController@listadoquirofanos')->name('admin.quirofanos.index');
         Route::get('quirofanos/create', 'QuirofanosController@create')->name('admin.quirofanos.create');

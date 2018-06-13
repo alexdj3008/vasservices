@@ -22,7 +22,11 @@ class CitasController extends Controller
         ->join('clinicas','clinicas.estado_id','=','estados.id')
         ->where('clinicas.estatus','=','A')
         ->get();
-        
+        $especialidades=DB::table('especialidads')
+        ->select('especialidads.id','especialidads.descripcion')->distinct()
+        ->join('tipo_cirugias','tipo_cirugias.especialidad_id','=','especialidads.id')
+        ->where('tipo_cirugias.estatus','=','A')
+        ->get(); 
         $tratamientos=TipoCirugia::where("estatus","=","A")->orderBy('especialidad_id')->get();
         $cirujanos=Cirujano::where("estatus","=","A")->orderBy('especialidad_id')->get();
         $clinicas=Clinica::where("estatus","=","A")->orderBy('estado_id')->get();

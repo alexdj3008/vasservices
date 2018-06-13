@@ -5,7 +5,7 @@
 <section id="services">
   <div class="container">
     <div class="section-header">
-      <h2>Tratamientos quirúrgicos</h2>
+      <h2>Cirujanos</h2>
       <p>A continuación te mostramos las especialidades de tratamientos quirúrgicos ofrecidos en nuestra gestión</p>
       <p>Haz click en alguna de ellas para ver las cirugias disponibles en cada especialidad</p>
     </div>

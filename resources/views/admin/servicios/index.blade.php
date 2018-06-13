@@ -33,10 +33,10 @@
           <td>{{$servicio->id}}</td>
           <td>{{$servicio->nombre}}</td>
           <td>
-          <a href="{{route('admin.servicios.edit',$servicio)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+          <a href="{{route('admin.servicios.edit',$servicio)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Editar</a>
           <form action="{{route('admin.servicios.delete',$servicio)}}" onsubmit="return confirm('Seguro que quiere eliminar el registro?')" method="POST" style="display:inline">
               {{csrf_field()}} {{method_field('PUT')}}
-            <button href="" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>
+            <button href="" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Eliminar</button>
           </form>
           </td>  
         </tr>

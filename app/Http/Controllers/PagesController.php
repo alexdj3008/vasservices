@@ -22,6 +22,7 @@ class PagesController extends Controller
         ->where('clinicas.estatus','=','A')
         ->get();
         $clinicas=Clinica::where("estatus","=","A")->orderBy('estado_id')->get();
+        
         return view('usuario/iclinicas',compact('clinicas','estados'));
     }
 
