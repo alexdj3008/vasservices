@@ -43,7 +43,7 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label >Estado donde se encuentra la Clínica</label>
-                        <select name="estado" id="" class="form-control" required autofocus>
+                        <select name="tratamiento" id="" class="form-control" required autofocus>
                             <option value="">Selecciona un estado</option>
                             @foreach($estados as $estado)
                         <option value="{{$estado->id}}">{{$estado->nombre}}</option>

@@ -27,11 +27,7 @@
           <i class="fa fa-eye"> Ver todas las historias médicas</i>
         </a>
       </li>
-      <li {{request()->is('medico/historias/create') ? 'class=active' : ''}}>
-        <a href="{{route('medico.historias.create')}}">
-          <i class="fa fa-pencil"> Crear Historia médica</i>
-        </a>
-      </li>
+      
     </ul>
   </li>
 </ul>

@@ -31,11 +31,13 @@ Route::get('tratamientos/{tratamiento}', 'PagesController@tipocirugia')->name('u
 //Rutas de paciente logueado
 Route::group(['prefix' => 'paciente',
     'namespace' => 'Paciente',
-    'middleware' => 'auth'],
+    'middleware' => ['auth','role:paciente']],
     function () {
         Route::get('editar/{user}', 'PacienteController@edit')->name('paciente.datos.edit');
         Route::put('update/{user}', 'PacienteController@update')->name('paciente.datos.update');
         Route::post('update/{user}/foto', 'PacienteController@storefoto')->name('paciente.datos.storefoto');
+        Route::get('citas/create', 'CitasController@create')->name('paciente.citas.create');
+        Route::post('citas', 'CitasController@store')->name('paciente.citas.store');
     });
 //fin de rutas de paciente logueado
 

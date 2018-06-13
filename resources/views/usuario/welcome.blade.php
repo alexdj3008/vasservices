@@ -13,7 +13,7 @@
         <a href="{{route('login')}}" class="btn-get-started scrollto">Iniciar sesión</a>
         <a href="{{route('register')}}" class="btn-projects scrollto">Registrarse</a>
         @else
-        <a href="{{route('login')}}" class="btn-get-started scrollto">Solicitar cita</a>
+        <a href="{{route('paciente.citas.create')}}" class="btn-get-started scrollto">Solicitar cita</a>
        @endif
       </div>
       
@@ -69,7 +69,28 @@
               <p>Incluye todos los costes que se generan durante el proceso quirúrgico completo (desde el diagnóstico que realiza el médico especialista hasta la última revisión postoperatoria necesaria para obtener el alta médica).</p>
   
             </div>
-            
+            <div class="col-lg-6 content">
+                
+                <h2>¿Como funciona nuestro servicio?</h2>
+                <p>
+                  Luego de registrarte y acceder al sistema ingresa a la opción "Solicitar cita", al llenar los datos correspondientes
+                   podrás ponerte contacto con el médico seleccionado, el te indicará los exámenes necesarios para saber si realmente necesitas 
+                   una cirugía, de ser realmente necesaria la cirugía, se llevará a cabo la planifación de la cirugía (proceso administrativo) 
+                   y si te hará llegar la información con la fecha y lugar donde se llevará a cabo la cirugía.
+                </p>
+    
+              </div>
+              <div class="col-lg-6 content">
+                  
+                  <h2>Contáctanos</h2>
+                  <p>
+                    Para mayor información sobre nuestros servicios puedes contactarnos por los siguientes medios
+                  </p>
+                  <h3><i class="fa fa-phone"></i>Teléfono</h3>
+                  <p>+584165153206</p>
+                  <h3><i class="fa fa-envelope-o"></i> correo</h3>
+                  <p>vasservices@gmail.com</p>
+                </div>
           </div>
       </div>
     </section><!-- #about -->

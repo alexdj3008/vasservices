@@ -51,7 +51,7 @@ class PagesController extends Controller
         ->join('cirujanos','cirujanos.especialidad_id','=','especialidads.id')
         ->where('cirujanos.estatus','=','A')
         ->get();
-        $cirujanos=Cirujano::latest('especialidad_id')->get();;
+        $cirujanos=Cirujano::where("estatus","=","A")->orderBy('especialidad_id')->get();
         return view('usuario/icirujanos',compact('cirujanos','especialidades'));
     }
     public function cirujano(Cirujano $cirujano)

@@ -8,26 +8,26 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="http://localhost/vas/public/img/favicon.png" rel="icon">
-  <link href="http://localhost/vas/public/img/favicon.png" rel="apple-touch-icon">
+  <link href="/img/favicon.png" rel="icon">
+  <link href="/img/favicon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="http://localhost/vas/public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="http://localhost/vas/public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="http://localhost/vas/public/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="http://localhost/vas/public/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="http://localhost/vas/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="http://localhost/vas/public/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-  <link href="http://localhost/vas/public/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   @stack('styles')
   
   <!-- Main Stylesheet File -->
-  <link href="http://localhost/vas/public/css/style.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: Reveal
@@ -112,21 +112,21 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="http://localhost/vas/public/lib/jquery/jquery.min.js"></script>
-  <script src="http://localhost/vas/public/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="http://localhost/vas/public/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="http://localhost/vas/public/lib/easing/easing.min.js"></script>
-  <script src="http://localhost/vas/public/lib/superfish/hoverIntent.js"></script>
-  <script src="http://localhost/vas/public/lib/superfish/superfish.min.js"></script>
-  <script src="http://localhost/vas/public/lib/wow/wow.min.js"></script>
-  <script src="http://localhost/vas/public/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="http://localhost/vas/public/lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="http://localhost/vas/public/lib/sticky/sticky.js"></script>
+  <script src="/lib/jquery/jquery.min.js"></script>
+  <script src="/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/lib/easing/easing.min.js"></script>
+  <script src="/lib/superfish/hoverIntent.js"></script>
+  <script src="/lib/superfish/superfish.min.js"></script>
+  <script src="/lib/wow/wow.min.js"></script>
+  <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="/lib/sticky/sticky.js"></script>
   @stack('scripts')
   
 
   <!-- Template Main Javascript File -->
-  <script src="http://localhost/vas/public/js/main.js"></script>
+  <script src="/js/main.js"></script>
 
 </body>
 </html>

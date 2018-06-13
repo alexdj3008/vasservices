@@ -11,23 +11,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>{{config('app.name')}} | Médico</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link href="http://localhost/vas/public/img/favicon.png" rel="icon">
+  <link href="/img/favicon.png" rel="icon">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="http://localhost/vas/public/adminlte/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/adminlte/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!--Tabla-->
-  <link rel="stylesheet" href="http://localhost/vas/public/adminlte/plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="http://localhost/vas/public/adminlte/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/adminlte/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
   @stack('styles')
-  <link rel="stylesheet" href="http://localhost/vas/public/adminlte/css/skins/skin-blue-light.css">
+  <link rel="stylesheet" href="/adminlte/css/skins/skin-blue-light.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,7 +90,7 @@ desired effect
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
                 @if (is_null(auth()->user()->cirujano->imagen))
-                  <img src="http://localhost/vas/public/img/noimagen.png" class="user-image" alt="User Image">   
+                  <img src="/img/noimagen.png" class="user-image" alt="User Image">   
                 @else
                   <img src="{{url(auth()->user()->cirujano->imagen)}}" class="user-image" alt="User Image">
                 @endif
@@ -101,7 +101,7 @@ desired effect
                 <!-- The user image in the menu -->
                 <li class="user-header">
                   @if (is_null(auth()->user()->cirujano->imagen))
-                    <img src="http://localhost/vas/public/img/noimagen.png" class="img-circle" alt="User Image">   
+                    <img src="/img/noimagen.png" class="img-circle" alt="User Image">   
                   @else
                     <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
                   @endif
@@ -146,7 +146,7 @@ desired effect
         <div class="user-panel">
           <div class="pull-left image">
             @if (is_null(auth()->user()->cirujano->imagen))
-              <img src="http://localhost/vas/public/img/noimagen.png" class="img-circle" alt="User Image">   
+              <img src="/img/noimagen.png" class="img-circle" alt="User Image">   
             @else
               <img src="{{url(auth()->user()->cirujano->imagen)}}" class="img-circle" alt="User Image">
             @endif
@@ -301,14 +301,14 @@ desired effect
   <!-- REQUIRED JS SCRIPTS -->
 
   <!-- jQuery 2.2.3 -->
-  <script src="http://localhost/vas/public/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
-  <script src="http://localhost/vas/public/adminlte/bootstrap/js/bootstrap.min.js"></script>
-  <script src="http://localhost/vas/public/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="http://localhost/vas/public/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
   <!-- AdminLTE App -->
   @stack('scripts')
-  <script src="http://localhost/vas/public/adminlte/js/app.min.js"></script>
+  <script src="/adminlte/js/app.min.js"></script>
 
   <!-- page script -->
   <script>
