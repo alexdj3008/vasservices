@@ -10,6 +10,7 @@ use App\TipoCirugia;
 use App\Especialidad;
 use App\Servicios;
 use App\Cirujano;
+use Illuminate\Support\Facades\Auth;
 class PagesController extends Controller
 {
     public function home(){

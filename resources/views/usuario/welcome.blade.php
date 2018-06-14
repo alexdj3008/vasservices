@@ -14,7 +14,12 @@
         <a href="{{route('register')}}" class="btn-projects scrollto">Registrarse</a>
         @else
           @if (auth()->user()->hasRole('paciente'))
-            <a href="{{route('paciente.citas.create')}}" class="btn-get-started scrollto">Solicitar cita</a>     
+            @empty (auth()->user()->paciente->cita)
+              <a href="{{route('paciente.citas.create')}}" class="btn-get-started scrollto">Solicitar cita</a>     
+            @endempty
+            @isset(auth()->user()->paciente->cita)
+            <a href="{{route('paciente.citas.create')}}" class="btn-get-started scrollto">Ya tienes una cita wey</a>     
+            @endisset
           @endif
        
        @endif

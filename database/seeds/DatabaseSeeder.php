@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(ClinicasTableSeeder::class);
         $this->call(TiposCirugiaTableSeeder::class);
+        $this->call(ServiciosTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

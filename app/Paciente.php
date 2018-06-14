@@ -11,4 +11,8 @@ class Paciente extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function cita()
+    {
+        return $this->hasMany(PlanificacionCirugia::class);
+    }
 }

@@ -39,6 +39,16 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label>Deseo contratar los siguientes servicios</label>
+                            <select name='servicios[]' class="form-control select2" 
+                                multiple="multiple" 
+                                data-placeholder="Selecciona uno o mas servicios" style="width: 100%;" required autofocus>
+                                @foreach($servicios as $servicio)
+                                    <option value="{{$servicio->id}}">{{$servicio->nombre}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
                     </form>
@@ -51,9 +61,12 @@
 
 
 @push('styles')
-
+<link rel="stylesheet" href="/adminlte/plugins/select2/select2.min.css">
 @endpush 
 
 @push('scripts')
-
+<script src="/adminlte/plugins/select2/select2.full.min.js"></script>
+<script>
+    $('.select2').select2();
+</script>
 @endpush

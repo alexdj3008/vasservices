@@ -18,6 +18,7 @@ class CreatePlanificacionCirugiasTable extends Migration
             $table->unsignedInteger('tipo_cirugia_id');
             $table->unsignedInteger('reservacion_id')->nullable();
             $table->unsignedInteger('cirujano_id');
+            $table->unsignedInteger('paciente_id');
             $table->String('responsable');
             $table->String('parentesco');
             $table->char('Estatus');
