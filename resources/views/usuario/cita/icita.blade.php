@@ -49,6 +49,24 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label>Responsable</label>
+                            <input placeholder="Nombre de la persona que lo acompañará" class="form-control" type="text" name="responsable" id="" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label>Parentesco</label>
+                            <select class="form-control" name="parentesco" id="" required autofocus>
+                                <option value="">Selecciona el parentesco</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Padre">Padre</option>
+                                <option value="Tío(a)">Tío(a)</option>
+                                <option value="Primo(a)">Primo(a)</option>
+                                <option value="Abuelo(a)">Abuelo(a)</option>
+                                <option value="Otro(a)">Otro(a)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>
                     </form>

@@ -12,6 +12,12 @@ body {
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
+.alert {
+  border-radius: 3px;
+}
+.alert-success {
+  border-color: #008d4c;
+}
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,

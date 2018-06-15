@@ -42,13 +42,13 @@ class CitasController extends Controller
         $cita = new PlanificacionCirugia;
         $cita->tipo_cirugia_id = $request->get('tratamiento');
         $cita->cirujano_id = $request->get('tratamiento');
-        $cita->responsable = 'Ana mercedes';
-        $cita->parentesco = 'profesora';
+        $cita->responsable = $request->get('responsable');
+        $cita->parentesco = $request->get('parentesco');
         $cita->estatus = "P"; //Se guarda como pendiente por planificar
 
         $cita->paciente_id = Auth::user()->paciente->id;
         $cita->save();
         $cita->servicios()->sync($request->get('servicios'));
-        return redirect()->route('login');
+        return redirect()->route('home')->with('flash','Registro realizado con éxito');
     }
 }

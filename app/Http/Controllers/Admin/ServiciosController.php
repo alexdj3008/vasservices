@@ -29,7 +29,7 @@ class ServiciosController extends Controller
         $servicio->descripcion=$request->get('descripcion');
         $servicio->estatus="A";
         $servicio->save();
-        return back()->with('flash','Servicio registrado');
+        return back()->with('flash','Registro realizado con éxito');
     }
     public function edit(Servicios $servicio)
     {
