@@ -1,20 +1,11 @@
-@extends('medico/layout') @section('header')
+@extends('medico/layout') 
+@section('header')
 <h1>
     Perfil
     <small>Editar datos</small>
 </h1>
-{{--
-<ol class="breadcrumb">
-    <li>
-        <a href="{{route('dashboard')}}">
-            <i class="fa fa-dashboard"></i> Inicio</a>
-    </li>
-    <li>
-        <a href="{{route('admin.cirujanos.index')}}">
-            <i class="fa fa-dashboard"></i> Cirujano</a>
-    </li>
-    <li class="active">Editar cirujano</li>
-</ol> --}} @stop @section('content')
+ @stop 
+@section('content')
 <div class="row">
     <form method="POST" action="{{route('medico.cirujano.update',$user)}}">
         {{csrf_field()}} {{method_field('PUT')}}
@@ -87,7 +78,7 @@
                         <label for="">Imagen actual</label>
                         <div class="col-md-12">
                             @if (is_null($user->cirujano->imagen))
-                                <img class="img-responsive" src="http://localhost/vas/public/img/noimagen.png" alt=""> 
+                                <img class="img-responsive" src="/img/noimagen.png" alt=""> 
                             @else
                                 <img class="img-responsive" src="{{url($user->cirujano->imagen)}}" alt=""> 
                             @endif
@@ -107,13 +98,13 @@
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/dropzone.css"> 
-<link rel="stylesheet" href="http://localhost/vas/public/adminlte/plugins/select2/select2.min.css">
+<link rel="stylesheet" href="/adminlte/plugins/select2/select2.min.css">
 @endpush 
 
 @push('scripts')
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/min/dropzone.min.js"></script>
-<script src="http://localhost/vas/public/adminlte/plugins/select2/select2.full.min.js"></script>
+<script src="/adminlte/plugins/select2/select2.full.min.js"></script>
 <script>
     
     $('.select2').select2();    

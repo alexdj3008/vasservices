@@ -1,14 +1,14 @@
 <ul class="sidebar-menu">
   <li class="header">Navegación</li>
   <!-- Optionally, you can add icons to the links -->
-  <li {{request()->is('admin') ? 'class=active' : ''}}>
-    <a href="{{route('dashboard')}}">
+  <li {{request()->is('medico') ? 'class=active' : ''}}>
+    <a href="{{route('medico.dashboard')}}">
       <i class="fa fa-home"></i>
       <span>Inicio</span>
     </a>
   </li>
-  <li {{request()->is('admin') ? 'class=active' : ''}}>
-    <a href="{{route('dashboard')}}">
+  <li {{request()->is('medico') ? 'class=active' : ''}}>
+    <a href="{{route('medico.dashboard')}}">
       <i class="fa fa-book"></i>
       <span>Agenda</span>
     </a>

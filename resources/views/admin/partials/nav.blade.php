@@ -50,14 +50,14 @@
       </ul>
     </li>
 
-    <li class="treeview {{request()->is('admin/clinicas*') ? 'active' : ''}}">
+    <li class="treeview {{request()->is('admin/pacientes*') ? 'active' : ''}}">
       <a href="#"><i class="fa fa-users"></i> <span>Pacientes</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
       <ul class="treeview-menu">
-        <li {{request()->is('admin/clinicas') ? 'class=active' : ''}}><a href="{{route('admin.clinicas.index')}}"><i class="fa fa-eye"> Ver todoss los pacientes</i></a></li>
+        <li {{request()->is('admin/clinicas') ? 'class=active' : ''}}><a href="{{route('admin.pacientes.index')}}"><i class="fa fa-eye"> Ver todoss los pacientes</i></a></li>
         
       </ul>
     </li>
