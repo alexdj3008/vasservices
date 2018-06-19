@@ -86,6 +86,11 @@ Route::group(['prefix' => 'admin',
         Route::post('cirujanos', 'CirujanosController@store')->name('admin.cirujanos.store');
         Route::delete('cirujanos/delete/{cirujano}', 'CirujanosController@delete')->name('admin.cirujano.delete');
 
+//Planificar cirugias
+        Route::get('planificar', 'PlanificarController@listadocitas')->name('admin.planificar.index');
+        Route::get('planificar/{cita}', 'PlanificarController@edit')->name('admin.planificar.edit');
+        Route::put('planificar/{cita}', 'PlanificarController@update')->name('admin.planificar.update');
+
     });
 
 //Fin de Rutas del usuario administrador    

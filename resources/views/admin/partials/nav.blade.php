@@ -2,7 +2,7 @@
     <li class="header">Navegación</li>
     <!-- Optionally, you can add icons to the links -->
 <li {{request()->is('admin') ? 'class=active' : ''}}><a href="{{route('dashboard')}}"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
-<li {{request()->is('admin') ? 'class=active' : ''}}><a href="{{route('dashboard')}}"><i class="fa fa-pencil"></i> <span>Planificación de cirugías</span></a></li>    
+<li {{request()->is('admin') ? 'class=active' : ''}}><a href="{{route('admin.planificar.index')}}"><i class="fa fa-pencil"></i> <span>Planificación de cirugías</span></a></li>    
     <li class="treeview {{request()->is('admin/clinicas*') ? 'active' : ''}}">
       <a href="#"><i class="fa fa-hospital-o"></i> <span>Clínicas</span>
         <span class="pull-right-container">
@@ -57,7 +57,7 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li {{request()->is('admin/clinicas') ? 'class=active' : ''}}><a href="{{route('admin.pacientes.index')}}"><i class="fa fa-eye"> Ver todoss los pacientes</i></a></li>
+        <li {{request()->is('admin/pacientes') ? 'class=active' : ''}}><a href="{{route('admin.pacientes.index')}}"><i class="fa fa-eye"> Ver todoss los pacientes</i></a></li>
         
       </ul>
     </li>

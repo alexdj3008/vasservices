@@ -30,7 +30,7 @@ class CitasController extends Controller
             ->where('tipo_cirugias.estatus', '=', 'A')
             ->get();
         $tratamientos = TipoCirugia::where("estatus", "=", "A")->orderBy('especialidad_id')->get();
-        $cirujanos = Cirujano::where("estatus", "=", "A")->orderBy('especialidad_id')->get();
+        $cirujanos = Cirujano::where("estatus", "=", "A")->get();
         $clinicas = Clinica::where("estatus", "=", "A")->orderBy('estado_id')->get();
         return view('usuario.cita.icita', compact('estados', 'especialidades', 'tratamientos', 'cirujanos', 'clinicas', 'servicios'));
     }
@@ -41,7 +41,7 @@ class CitasController extends Controller
         // return PlanificacionCirugia::create($request->all());
         $cita = new PlanificacionCirugia;
         $cita->tipo_cirugia_id = $request->get('tratamiento');
-        $cita->cirujano_id = $request->get('tratamiento');
+        $cita->cirujano_id = $request->get('cirujano');
         $cita->responsable = $request->get('responsable');
         $cita->parentesco = $request->get('parentesco');
         $cita->estatus = "P"; //Se guarda como pendiente por planificar

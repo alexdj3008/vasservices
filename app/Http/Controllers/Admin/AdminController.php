@@ -27,7 +27,7 @@ class AdminController extends Controller
         $chart = Charts::database($users, 'bar', 'highcharts')
             ->title("Usuarios registrados por mes")
             ->elementLabel("Total de usuarios")
-            ->dimensions(1000, 500)
+            ->dimensions(500, 500)
             ->responsive(true)
             ->groupByMonth(date('Y'), true);
         return view('admin.dashboard', compact('chart'));

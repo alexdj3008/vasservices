@@ -11,4 +11,17 @@ class PlanificacionCirugia extends Model
     {
         return $this->belongsToMany(Servicios::class);
     }
+    public function paciente()
+    {
+        return $this->belongsTo(Paciente::class);
+    }
+    public function cirujano()
+    {
+        return $this->belongsTo(Cirujano::class);
+        
+    }
+    public function tipo_cirugia()
+    {
+        return $this->belongsTo(TipoCirugia::class);
+    }
 }

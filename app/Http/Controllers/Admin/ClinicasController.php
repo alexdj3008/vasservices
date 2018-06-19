@@ -43,6 +43,7 @@ class ClinicasController extends Controller
         $clinicas=Clinica::where("estatus","=","A")->get();
         return redirect()->route('admin.clinicas.index',compact('clinicas'))->with('flash','Registro realizado con éxito');
     }
+    
     public function storefoto(Clinica $clinica)
     {
         $this->validate(request(),[
