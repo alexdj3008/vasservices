@@ -24,4 +24,8 @@ class PlanificacionCirugia extends Model
     {
         return $this->belongsTo(TipoCirugia::class);
     }
+    public function reservacion()
+    {
+        return $this->belongsTo(Reservacion::class);
+    }
 }

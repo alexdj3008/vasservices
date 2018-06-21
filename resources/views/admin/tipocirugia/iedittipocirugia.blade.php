@@ -74,12 +74,12 @@
 @stop
 
 @push('styles')
-<link rel="stylesheet" href="http://localhost/vas/public/adminlte/plugins/select2/select2.min.css">
+<link rel="stylesheet" href="/adminlte/plugins/select2/select2.min.css">
 @endpush
 
 @push('scripts')
 <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-<script src="http://localhost/vas/public/adminlte/plugins/select2/select2.full.min.js"></script>
+<script src="/adminlte/plugins/select2/select2.full.min.js"></script>
 <script>
     
     CKEDITOR.replace('editor');

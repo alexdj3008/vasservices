@@ -15,4 +15,8 @@ class Paciente extends Model
     {
         return $this->hasMany(PlanificacionCirugia::class);
     }
+    public function historia()
+    {
+        return $this->hasOne(HistoriaMedica::class);
+    }
 }

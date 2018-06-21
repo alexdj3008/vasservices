@@ -45,7 +45,7 @@ class CirujanosController extends Controller
         $cirujano->save();
         return $data;
         //Envio de credenciales
-        UsuarioFueCreado::dispatch($user,$data['password']);
+        // UsuarioFueCreado::dispatch($user,$data['password']);
         return redirect()->route('admin.cirujanos.index')->with('flash','Registro realizado con éxito');
     }
     

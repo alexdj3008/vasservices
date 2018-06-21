@@ -8,7 +8,7 @@
     </a>
   </li>
   <li {{request()->is('medico') ? 'class=active' : ''}}>
-    <a href="{{route('medico.dashboard')}}">
+    <a href="{{route('medico.agenda.index',auth()->user())}}">
       <i class="fa fa-book"></i>
       <span>Agenda</span>
     </a>

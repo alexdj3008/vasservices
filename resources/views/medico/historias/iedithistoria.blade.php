@@ -125,7 +125,7 @@
                         <b>N° de Historia</b> <a class="pull-right">{{$historia->id}}</a>
                         </li>
                         <li class="list-group-item">
-                            <b>Ultima modificación</b> <a class="pull-right">{{$historia->updated_at->format('d M Y')}}</a>
+                            <b>Última modificación</b> <a class="pull-right">{{$historia->updated_at->format('d M Y')}}</a>
                         </li>
                         
                     </ul>
@@ -141,11 +141,14 @@
                     <p class="text-muted">
                         {{$historia->paciente->user->email}}
                     </p>
+                
+                    <div class="form-group">
+                        <button type="submit" class=" form- control btn btn-primary">Guardar</button>
+                    </div>
+
                 </div>
                 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
+                
 
             </div>
 

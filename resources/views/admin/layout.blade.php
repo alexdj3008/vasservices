@@ -3,7 +3,8 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html> 
+<html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,92 +57,96 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
+
 <body class="hold-transition skin-blue-light sidebar-mini">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- Main Header -->
-  <header class="main-header">
+    <!-- Main Header -->
+    <header class="main-header">
 
-    <!-- Logo -->
-    <a href={{route('dashboard')}} class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>V</b>AS</span>
-      <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>{{config('app.name')}}</b>Administrativo</span>
-    </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
+      <!-- Logo -->
+      <a href={{route( 'dashboard')}} class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini">
+          <b>V</b>AS</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">
+          <b>{{config('app.name')}}</b>Administrativo</span>
       </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          
-          
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">{{auth()->user()->name}}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                <p>
-                  {{auth()->user()->name}} - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Editar Datos</a>
-                </div>
-                <div class="pull-right">
-                <a href="{{route('logout')}}" class="btn btn-default btn-flat">Salir</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
 
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
 
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <!-- User Account Menu -->
+            <li class="dropdown user user-menu">
+              <!-- Menu Toggle Button -->
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- The user image in the navbar-->
+                <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                <span class="hidden-xs">{{auth()->user()->name}}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- The user image in the menu -->
+                <li class="user-header">
+                  <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                  <p>
+                    {{auth()->user()->name}} - Web Developer
+                    <small>Member since Nov. 2012</small>
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <li class="user-body">
+                  <div class="row">
+
+                  </div>
+                  <!-- /.row -->
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Editar Datos</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="{{route('logout')}}" class="btn btn-default btn-flat">Salir</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
         </div>
-        <div class="pull-left info">
-          <p>{{auth()->user()->name}}</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i>En Línea</a>
-        </div>
-      </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
 
-      <!-- search form (Optional) 
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p>{{auth()->user()->name}}</p>
+            <!-- Status -->
+            <a href="#">
+              <i class="fa fa-circle text-success"></i>En Línea</a>
+          </div>
+        </div>
+
+        <!-- search form (Optional) 
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -153,74 +158,76 @@ desired effect
       </form>
        /.search form -->
 
-      <!-- Sidebar Menu -->
-      @include('admin.partials.nav')
-      <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+        <!-- Sidebar Menu -->
+        @include('admin.partials.nav')
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      @yield('header')
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        @yield('header')
 
-    </section>
+      </section>
 
-    <!-- Main content -->
-    <section class="content">
-      @if(session()->has('flash'))
+      <!-- Main content -->
+      <section class="content">
+        @if(session()->has('flash'))
         <div class="alert alert-success">
           {{session('flash')}}
         </div>
-      @endif
-      @yield('content')
-      
+        @endif 
+        @yield('content')
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
 
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      
+      </section>
+      <!-- /.content -->
     </div>
-    <!-- Default to the left -->
-  <strong>Copyright &copy; 2018 <a href="{{route('home')}}">VAS</a>.</strong> Todos los derechos reservados.
-  </footer>
+    <!-- /.content-wrapper -->
 
-  
-</div>
-<!-- ./wrapper -->
+    {{-- <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
 
-<!-- REQUIRED JS SCRIPTS -->
+      </div>
+      <!-- Default to the left -->
+      <strong>Copyright &copy; 2018
+        <a href="{{route('home')}}">VAS</a>.</strong> Todos los derechos reservados.
+    </footer> --}}
 
-<!-- jQuery 2.2.3 -->
-<script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
-<script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-@stack('scripts')
-<script src="/adminlte/js/app.min.js"></script>
 
-<!-- page script -->
-<script>
-  $(function () {
-    $('#clinicas-table').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": true
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED JS SCRIPTS -->
+
+  <!-- jQuery 2.2.3 -->
+  <script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- Bootstrap 3.3.6 -->
+  <script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <!-- AdminLTE App -->
+  @stack('scripts')
+  <script src="/adminlte/js/app.min.js"></script>
+
+  <!-- page script -->
+  <script>
+    $(function () {
+      $('#clinicas-table').DataTable({
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": true
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>

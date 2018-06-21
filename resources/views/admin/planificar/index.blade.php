@@ -2,12 +2,12 @@
 
 @section('header')
 <h1>
-  Planificar Cirugias
+  Cirugias
   <small></small>
 </h1>
 <ol class="breadcrumb">
   <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-  <li class="active">Planificar Cirugias</li>
+  <li class="active">Cirugias</li>
 </ol>
 @stop
 
@@ -41,7 +41,7 @@
           @if (is_null($cita->reservacion_id))
             <td>Sin fecha</td>
           @else
-            <td>{{$cita->reservacion_id}}</td>  
+            <td>{{$cita->reservacion->fecha->format('d M Y')}}</td>  
           @endif
           @if($cita->estatus=="A")
             <td>Planificación realizada</td>
@@ -57,9 +57,7 @@
           @endif 
           @if($cita->estatus=="D")
             <td>Paciente dado de alta</td>
-            <td>
-            <a href="{{route('admin.planificar.edit',$cita)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Editar</a>
-          </td>
+            <td></td>
           @endif  
           @if($cita->estatus=="R")
             <td>Cirugía realizada</td>

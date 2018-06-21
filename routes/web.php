@@ -88,8 +88,8 @@ Route::group(['prefix' => 'admin',
 
 //Planificar cirugias
         Route::get('planificar', 'PlanificarController@listadocitas')->name('admin.planificar.index');
-        Route::get('planificar/{cita}', 'PlanificarController@edit')->name('admin.planificar.edit');
-        Route::put('planificar/{cita}', 'PlanificarController@update')->name('admin.planificar.update');
+        Route::get('planificar/{planificacion}', 'PlanificarController@edit')->name('admin.planificar.edit');
+        Route::put('planificar/{planificacion}', 'PlanificarController@update')->name('admin.planificar.update');
 
     });
 
@@ -111,6 +111,9 @@ Route::group(['prefix' => 'medico',
         Route::get('historia/{historia}', 'HistoriasController@edit')->name('medico.historia.edit');
         Route::get('historia/ver/{historia}', 'HistoriasController@view')->name('medico.historia.view');
         Route::put('medico/{historia}', 'HistoriasController@update')->name('medico.historia.update');
+        //Ruta de la agenda del cirujano
+        Route::get('agenda/{user}', 'AgendaController@agenda')->name('medico.agenda.index');
+    
     });
 
 // Authentication Routes...
