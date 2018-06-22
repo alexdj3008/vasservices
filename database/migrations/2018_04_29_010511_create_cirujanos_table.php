@@ -20,7 +20,7 @@ class CreateCirujanosTable extends Migration
             $table->String('telefono')->nullable();
             $table->Text('descripcion')->nullable();
             $table->String('imagen')->nullable();
-            $table->char('estatus');
+            $table->char('estatus',1);
             $table->timestamps();
         });
     }

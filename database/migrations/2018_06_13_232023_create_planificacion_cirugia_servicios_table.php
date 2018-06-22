@@ -17,6 +17,7 @@ class CreatePlanificacionCirugiaServiciosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('planificacion_cirugia_id');
             $table->unsignedInteger('servicios_id');
+            $table->char('estatus',1);
             $table->timestamps();
         });
     }

@@ -136,22 +136,22 @@
                         <!-- /.input group -->
                     </div>
                     <!-- /.form group -->
-
-                    <div class="form-group col-md-6">
+                    <div class=row id="personalquirurgico">
+                    <div class="form-group col-md-12">
                         <label >Personal Médico</label>
-                        
                         <input name='nombre' value="" type="text" placeholder="Nombre del personal" class="form-control" required autofocus>
-                    </div>
-                    <div class="form-group col-md-6">
                         <label for="tipo">Cargo</label>
-                        <input name='tipo' value="" type="text" placeholder="Cargo del personal" class="form-control" required autofocus>
+                        <input name='cargo' value="" type="text" placeholder="Cargo del personal" class="form-control" required autofocus>
                     </div>
+                    </div>
+                    <div class="form_group col-md-2">
+                            <input type="button" class="btn btn-xs btn-success form-control" id="add_cancion()" onClick="addCancion()" value="+" />
+                        </div>
                     <div class="form-group col-md-12">
                         <label>Insumos médicos necesarios en la cirugía</label>
                         <select name='insumos[]' class="form-control select2" 
                             multiple="multiple" 
                             data-placeholder="Selecciona una o mas insumos" style="width: 100%;" required autofocus>
-                            
                         </select>
                     </div>
 
@@ -183,7 +183,15 @@
 <script src="/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
 <script src="/adminlte/plugins/select2/select2.full.min.js"></script>
 <script>
-    
+    a = 0;
+    function addCancion(){
+        a++;
+        var div = document.createElement('div');
+        div.setAttribute('class', 'from-group col-md-12');
+        div.innerHTML = '<label >Personal Médico</label><input  name="nombre_'+a+'" value="" type="text" placeholder="Nombre del personal" class="form-control" required autofocus><label for="tipo">Cargo</label><input name="cargo_'+a+'" value="" type="text" placeholder="Cargo del personal" class="form-control" required autofocus>';
+        document.getElementById('personalquirurgico').appendChild(div);document.getElementById('personalquirurgico').appendChild(div);
+    }
+
     $('#datepicker').datepicker({
       autoclose: true
     });

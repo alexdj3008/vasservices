@@ -18,7 +18,7 @@ class CreateQuirofanosTable extends Migration
             $table->unsignedInteger('clinica_id');
             $table->integer('numero');
             $table->String('descripcion');
-            $table->char('estatus');
+            $table->char('estatus',1);
             $table->timestamps();
         });
     }

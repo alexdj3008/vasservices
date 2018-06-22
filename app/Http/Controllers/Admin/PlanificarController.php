@@ -25,7 +25,7 @@ class PlanificarController extends Controller
     }
     public function update(PlanificacionCirugia $planificacion,Request $request)
     {
-        //validacion de fecha
+        return $request;
         $reservacion=new Reservacion;
         $reservacion->planificacion_cirugia_id=$planificacion->id;
         $reservacion->quirofano_id=$request->quirofano;

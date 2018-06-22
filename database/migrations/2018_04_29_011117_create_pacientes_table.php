@@ -20,7 +20,7 @@ class CreatePacientesTable extends Migration
             $table->String('direccion')->nullable();
             $table->integer('edad')->nullable();
             $table->String('telefono')->nullable();
-            $table->char('estatus');
+            $table->char('estatus',1);
             $table->timestamps();
         });
     }

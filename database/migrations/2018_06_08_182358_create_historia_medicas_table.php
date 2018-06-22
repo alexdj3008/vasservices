@@ -32,7 +32,7 @@ class CreateHistoriaMedicasTable extends Migration
             $table->String('antecedentes')->nullable();
             $table->Float('peso')->nullable();
             $table->Float('talla')->nullable();
-            $table->char('estatus')->nullable();
+            $table->char('estatus');
             $table->timestamps();
         });
     }

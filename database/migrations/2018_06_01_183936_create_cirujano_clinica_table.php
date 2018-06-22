@@ -17,6 +17,7 @@ class CreateCirujanoClinicaTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('cirujano_id');
             $table->unsignedInteger('clinica_id');
+            $table->char('estatus',1);
             $table->timestamps();
         });
     }
