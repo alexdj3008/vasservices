@@ -8,6 +8,8 @@ use App\PlanificacionCirugia;
 use App\Reservacion;
 use Carbon\Carbon;
 use App\Agenda;
+use App\Insumo;
+use App\PersonalQuirurgico;
 class PlanificarController extends Controller
 {
     public function listadocitas()
@@ -25,7 +27,7 @@ class PlanificarController extends Controller
     }
     public function update(PlanificacionCirugia $planificacion,Request $request)
     {
-        return $request;
+        // return $request;
         $reservacion=new Reservacion;
         $reservacion->planificacion_cirugia_id=$planificacion->id;
         $reservacion->quirofano_id=$request->quirofano;
@@ -35,8 +37,16 @@ class PlanificarController extends Controller
         $planificacion->reservacion_id=$reservacion->id;
         $planificacion->estatus="A";
         $planificacion->save();
+        $insumos=[];
+        foreach($request->get('insumos') as $insumo)
+        {
+            $insumos[]=Insumo::create(['descripcion'=>$insumo,'planificacion_cirugia_id'=>$planificacion->id,'estatus'=>'A']);
+        }
+        PersonalQuirurgico::create(['nombre'=>$request->get('nombre'),'cargo'=>$request->get('cargo'),'planificacion_cirugia_id'=>$planificacion->id,'estatus'=>'A']);
+        PersonalQuirurgico::create(['nombre'=>$request->get('nombre_1'),'cargo'=>$request->get('cargo_1'),'planificacion_cirugia_id'=>$planificacion->id,'estatus'=>'A']);
         $agenda=new Agenda;
         $agenda->fecha=Carbon::parse($request->fecha);
+        $agenda->reservacion_id=$reservacion->id;
         $agenda->cirujano_id=$planificacion->cirujano_id;
         $agenda->estatus="A";
         $agenda->save();
