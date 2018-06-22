@@ -21,7 +21,7 @@ class CreatePlanificacionCirugiasTable extends Migration
             $table->unsignedInteger('paciente_id');
             $table->String('responsable');
             $table->String('parentesco');
-            $table->char('estatus');
+            $table->char('estatus',1);
             $table->timestamps();
         });
     }
