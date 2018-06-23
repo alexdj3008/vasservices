@@ -26,22 +26,19 @@
           <th>Clínica</th>
           <th>Quirófano</th>
           <th>Paciente</th>
-          <th>Acciones</th>
+          
         </tr>
       </thead>
       <tbody>
-        {{-- @foreach($historias as $historia)
+        @foreach($agendas as $agenda)
         <tr>
-          <td>{{$historia->id}}</td>
-          <td>{{$historia->paciente->user->name}}</td>
-          <td>{{$historia->paciente->direccion}}</td>
-          <td>
-            <a href="{{route('medico.historia.view',$historia)}}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> Ver detalles</a>  
-            <a href="{{route('medico.historia.edit',$historia)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Editar</a>
-          
-          </td>  
+          <td>{{$agenda->fecha->format('d M Y')}}</td>
+          <td>{{$agenda->reservacion->quirofano->clinica->nombre}}</td>
+          <td>{{$agenda->reservacion->quirofano->numero}}</td>
+          <td>{{$agenda->reservacion->planificacion->paciente->user->name}}</td>
+
         </tr>
-          @endforeach --}}
+          @endforeach
         </tbody>
         
       </table>

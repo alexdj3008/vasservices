@@ -179,6 +179,11 @@ desired effect
         <div class="alert alert-success">
           {{session('flash')}}
         </div>
+        @endif
+        @if (session()->has('flashd'))
+        <div class="alert alert-danger">
+            {{session('flashd')}}
+          </div>
         @endif 
         @yield('content')
 
