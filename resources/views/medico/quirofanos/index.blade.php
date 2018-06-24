@@ -35,7 +35,7 @@
           <td>{{$quirofano->numero}}</td>
           <td>{{$quirofano->clinica->nombre}}</td>
           <td>
-          <a href="{{route('admin.quirofanos.edit',$quirofano)}}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> Ver detalles</a>
+          <a href="{{route('medico.quirofano.view',$quirofano)}}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> Ver detalles</a>
           
           </td>  
         </tr>

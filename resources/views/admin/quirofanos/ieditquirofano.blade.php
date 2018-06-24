@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label>Clínica donde se encuentra el quirófano</label>
                         <select name="clinica_id" id="" class="form-control" required autofocus>
-                            <option value="">Selecciona un quirófano</option>
+                            <option value="">Selecciona una clínica</option>
                             @foreach($clinicas as $clinica)
                             <option value="{{$clinica->id}}"
                                 {{old('clinica',$quirofano->clinica_id)==$clinica->id ? 'selected' : ''}} >

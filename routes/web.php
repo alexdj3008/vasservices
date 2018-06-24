@@ -108,6 +108,7 @@ Route::group(['prefix' => 'medico',
         Route::post('cirujano/{user}/foto', 'CirujanoController@storefoto')->name('medico.cirujano.storefoto');
         //Rutas de consultar quirofanos
         Route::get('quirofanos', 'QuirofanosController@listadoquirofanos')->name('medico.quirofanos.index');
+        Route::get('quirofanos/{quirofano}', 'QuirofanosController@view')->name('medico.quirofano.view');
         //Rutas de historias medicas
         Route::get('historias', 'HistoriasController@listadohistorias')->name('medico.historias.index');
         Route::get('historias/create', 'HistoriasController@create')->name('medico.historias.create');
