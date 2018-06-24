@@ -11,7 +11,7 @@
                 <div class="row">
                   <div class="col-lg-6 about-img">
                     @if (is_null($clinica->imagen))
-                      <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                      <img src="/public/img/noimagen.png" alt="">   
                     @else
                       <img src="{{url($clinica->imagen)}}" alt="">
                     @endif
@@ -20,11 +20,12 @@
                   <div class="col-lg-6 content">
                     <h2>{{$clinica->nombre}}</h2>
                     <h3>{{$clinica->estado->nombre}}</h3>
-                    <h3>{{$clinica->direccion}}</h3> 
+                    <h3>RIF:{{$clinica->rif}}</h3>
+                    <h3><i class="fa fa-envelope-o"></i>Correo:{{$clinica->email}}</h3>
+                    <h3>Dirección:{{$clinica->direccion}}</h3> 
                   </div>
                   <div class="col-lg-12 content">  
                     <p>{!!$clinica->descripcion!!}</p>
-                    <h3>{{$clinica->correo}}</h3>
                   </div>
                 </div>
                 
@@ -57,7 +58,7 @@ Our Team Section
         <div id="{{$tratamiento->especialidad->descripcion}}" class="col-lg-3 col-md-6">
           <a href="{{route('usuario.tratamiento.view',$tratamiento)}}">
           <div class="member">
-            <div class="pic"><img src="/vas/public/img/cirugia.jpg" alt=""></div>
+            <div class="pic"><img src="/public/img/cirugia.jpg" alt=""></div>
             <div class="details">
               <h4>{{$tratamiento->nombre}}</h4>
               <span>{{$tratamiento->especialidad->descripcion}}</span>

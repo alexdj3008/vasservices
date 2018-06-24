@@ -1,4 +1,4 @@
-@extends('admin/layout')
+@extends('medico/layout')
 
 @section('header')
 <h1>
@@ -6,7 +6,7 @@
   <small></small>
 </h1>
 <ol class="breadcrumb">
-  <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> Inicio</a></li>
+  <li><a href="{{route('medico.dashboard')}}"><i class="fa fa-dashboard"></i> Inicio</a></li>
   <li class="active">Quirofanos</li>
 </ol>
 @stop
@@ -35,11 +35,8 @@
           <td>{{$quirofano->numero}}</td>
           <td>{{$quirofano->clinica->nombre}}</td>
           <td>
-          <a href="{{route('admin.quirofanos.edit',$quirofano)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Editar</a>
-          <form action="{{route('admin.quirofanos.delete',$quirofano)}}" onsubmit="return confirm('Seguro que quiere eliminar el registro?')" method="POST" style="display:inline">
-              {{csrf_field()}} {{method_field('PUT')}}
-            <button class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Eliminar</button>
-          </form>
+          <a href="{{route('admin.quirofanos.edit',$quirofano)}}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> Ver detalles</a>
+          
           </td>  
         </tr>
           @endforeach

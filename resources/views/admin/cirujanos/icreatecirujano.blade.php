@@ -21,12 +21,13 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label >Nombre completo del Cirujano</label>
-                        <input name='name' placeholder="" class="form-control" required autofocus>
+                        <input name='name' value="{{old('name')}}" placeholder="" class="form-control" required autofocus>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('email')?'has-error':''}}">
                         <label >Correo del Cirujano</label>
-                        <input type="email" name='email' placeholder="" class="form-control" required autofocus>
+                        <input type="email" value="{{old('email')}}" name='email' placeholder="" class="form-control" required autofocus>
+                        {!!$errors->first('email','<span class="help-block">:message</span>')!!}
                     </div>
                     <span class="help-block">La contraseña será generada automaticamente y enviada por correo</span>
                 </div>
@@ -40,7 +41,9 @@
                         <select name="especialidad_id" id="" class="form-control" required autofocus>
                             <option value="">Selecciona una especialidad</option>
                             @foreach($especialidades as $especialidad)
-                        <option value="{{$especialidad->id}}">{{$especialidad->descripcion}}</option>
+                                <option value="{{$especialidad->id}}">
+                                    {{$especialidad->descripcion}}
+                                </option>
                             @endforeach
                         </select>
                     </div>

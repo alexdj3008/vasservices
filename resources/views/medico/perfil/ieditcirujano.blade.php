@@ -1,3 +1,4 @@
+@if(auth()->user()->id==$user->id)
 @extends('medico/layout') 
 @section('header')
 <h1>
@@ -6,12 +7,22 @@
 </h1>
  @stop 
 @section('content')
+
 <div class="row">
     <form method="POST" action="{{route('medico.cirujano.update',$user)}}">
         {{csrf_field()}} {{method_field('PUT')}}
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-body">
+                    @if ($errors->any())
+                        <ul class="list-group">
+                            @foreach ($errors->all() as $error)
+                                <li class="list-group-item list-group-item-danger">
+                                    {{$error}}
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
                     <div class="form-group">
                         <label>Nombre del cirujano</label>
                         <input name='name' value="{{$user->name}}" placeholder="Ingrese el nombre del cirujano" class="form-control" required autofocus>
@@ -25,12 +36,12 @@
 
                     <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <input name='password' value="" type="password" placeholder="Ingrese el correo de la clínica" class="form-control">
+                        <input name='password' value="{{old('password')}}" type="password" placeholder="" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="password_confirmation">Confirmar contraseña</label>
-                        <input name='password_confirmation' value="" type="password" placeholder="Ingrese el correo de la clínica" class="form-control">
+                        <input name='password_confirmation' value="" type="password" placeholder="" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -95,6 +106,9 @@
 </div>
 
 @stop 
+@else
+    {!!redirect()->route('medico.cirujano.edit',auth()->user())!!}
+@endif
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.0.1/dropzone.css"> 

@@ -17,7 +17,6 @@ class CreateAgendasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('cirujano_id');
             $table->unsignedInteger('reservacion_id');
-            $table->timestamp('fecha');
             $table->char('estatus',1);
             $table->timestamps();
         });

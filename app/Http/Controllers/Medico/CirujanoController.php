@@ -31,19 +31,24 @@ class CirujanoController extends Controller
         $this->validate($request,[
             'name'=>'required',
             'email' => Rule::unique('users')->ignore($user->id)
+
             ]);
         $user->name=$request->get('name');
         if($request->filled('password'))
         {
+            $this->validate($request,[
+                'password' => 'required|string|min:6|confirmed'
+                ]);
             $user->password=$request->get('password');
         }            
         $user->cirujano->especialidad_id = $request->get('especialidad');
-        // $cirujano->telefono = $request->get('telefono');
+        
         $user->cirujano->descripcion = $request->get('descripcion');
         $user->cirujano->clinicas()->sync($request->get('clinicas'));
         $cirujano=$user->cirujano;
+        $user->save();
         $cirujano->save();
-        return back()->with('flash', 'Cirujano modificado');
+        return back()->with('flash', 'Cirujano modificado con éxito');
     }
 
     public function storefoto(User $user)

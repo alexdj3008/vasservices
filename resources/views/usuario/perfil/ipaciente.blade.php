@@ -70,9 +70,7 @@
 </div>
 @endsection
 @else
-    @section('content')
-        <H1>Not allowed</H1>
-    @endsection
+    {{redirect()->route('paciente.datos.edit',auth()->user())}}
 @endif
 
 @push('styles')

@@ -29,7 +29,8 @@ class ClinicasController extends Controller
     {
         // return Clinica::create($request->all());
         $this->validate($request,[
-         'rif' => 'required|string|max:12|unique:clinicas'
+         'rif' => 'required|string|max:13|unique:clinicas',
+         'email' => 'required|string|email|max:255|unique:clinicas'
         ]);
         $clinica=new Clinica;
         $clinica->nombre=$request->get('nombre');

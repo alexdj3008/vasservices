@@ -17,7 +17,7 @@ class CreateInsumosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('planificacion_cirugia_id');
             $table->String('descripcion');
-            $table->char('estatus',1);
+            $table->char('estatus',1)->default('A');
             $table->timestamps();
         });
     }

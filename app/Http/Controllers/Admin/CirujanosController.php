@@ -43,16 +43,16 @@ class CirujanosController extends Controller
         $cirujano->especialidad_id=$request->get('especialidad_id');
         $cirujano->estatus="A";
         $cirujano->save();
-        return $data;
+        // return $data;
         //Envio de credenciales
-        // UsuarioFueCreado::dispatch($user,$data['password']);
-        return redirect()->route('admin.cirujanos.index')->with('flash','Registro realizado con éxito');
+        UsuarioFueCreado::dispatch($user,$data['password']);
+        return redirect()->route('admin.cirujanos.index')->with('flash','Registro realizado con éxito.');
     }
     
     public function delete(Cirujano $cirujano)
     {
-        $cirujano->user->delete();
-        $cirujano->delete();
+        $cirujano->estatus="E";
+        $cirujano->save();
         return back()->with('flash','Médico cirujano Eliminado con éxito');
     }
 }

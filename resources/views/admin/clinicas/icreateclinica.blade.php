@@ -57,6 +57,7 @@
                     <div class="form-group">
                         <label >Correo</label>
                         <input name='email' value="{{old('email')}}" type="email" placeholder="Ingrese el correo de la clínica" class="form-control" required autofocus>
+                        {!!$errors->first('email','<span class="help-block">:message</span>')!!}
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Guardar</button>

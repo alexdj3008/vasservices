@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rule;
 use App\Quirofano;
 use App\Clinica;
 class QuirofanosController extends Controller
@@ -30,7 +31,8 @@ class QuirofanosController extends Controller
         $quirofano->descripcion=$request->get('descripcion');
         $quirofano->estatus="A";
         $quirofano->save();
-        return back()->with('flash','Quirofano creado');
+        $quirofanos=Quirofano::where("estatus","=","A")->get();
+        return redirect()->route('admin.quirofanos.index',compact('quirofanos'))->with('flash','Registro realizado con éxito');
     }
     public function edit(Quirofano $quirofano)
     {
@@ -43,12 +45,12 @@ class QuirofanosController extends Controller
         $quirofano->descripcion=$request->get('descripcion');
         $quirofano->estatus="A";
         $quirofano->save();
-        return back()->with('flash','Quirofano modificado');
+        return back()->with('flash','Quirofano modificado con éxito');
     }
     public function delete(Quirofano $quirofano,Request $request)
     {
         $quirofano->estatus="E";
         $quirofano->save();
-        return back()->with('flash','Servicio adicional Eliminado');
+        return back()->with('flash','Quirófano eliminado con éxito');
     }
 }

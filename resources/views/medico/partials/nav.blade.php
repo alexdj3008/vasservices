@@ -13,6 +13,12 @@
       <span>Agenda</span>
     </a>
   </li>
+  <li {{request()->is('medico') ? 'class=active' : ''}}>
+      <a href="{{route('medico.quirofanos.index')}}">
+        <i class="fa fa-plus-square"></i>
+        <span>Quirófanos</span>
+      </a>
+    </li>
   <li class="treeview {{request()->is('medico/historias*') ? 'active' : ''}}">
     <a href="#">
       <i class="fa fa-file-text-o"></i>

@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             @if (is_null($clinica->imagen))
-                                <img class="img-responsive" src="http://localhost/vas/public/img/noimagen.png" alt=""> 
+                                <img class="img-responsive" src="/public/img/noimagen.png" alt=""> 
                             @else
                                 <img class="img-responsive" src="{{url($clinica->imagen)}}" alt="">
                             @endif

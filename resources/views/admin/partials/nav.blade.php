@@ -22,7 +22,7 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li {{request()->is('admin/quirofanos') ? 'class=active' : ''}}><a href="{{route('admin.quirofanos.index')}}"><i class="fa fa-eye"> Ver todoss los quirófanos</i></a></li>
+        <li {{request()->is('admin/quirofanos') ? 'class=active' : ''}}><a href="{{route('admin.quirofanos.index')}}"><i class="fa fa-eye"> Ver todos los quirófanos</i></a></li>
         <li {{request()->is('admin/quirofanos/create') ? 'class=active' : ''}}><a href="{{route('admin.quirofanos.create')}}"><i class="fa fa-pencil"> Añadir quirófano</i></a></li>
       </ul>
     </li>
