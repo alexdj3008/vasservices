@@ -64,7 +64,7 @@
                         <div class="member">
                           <div class="pic">
                             @if (is_null($clinica->imagen))
-                              <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                              <img src="/img/noimagen.png" alt="">   
                             @else
                               <img src="{{url($clinica->imagen)}}" alt="">
                             @endif

@@ -52,7 +52,7 @@
                             <label for="">Imagen actual</label>
                             <div class="col-lg-6 about-img">
                                 @if (is_null($user->paciente->imagen))
-                                    <img width="100%" src="http://localhost/vas/public/img/noimagen.png" alt=""> 
+                                    <img width="100%" src="/img/noimagen.png" alt=""> 
                                 @else
                                     <img width="100%" src="{{url($user->paciente->imagen)}}" alt=""> 
                                 @endif

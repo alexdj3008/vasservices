@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 about-img">
-          <img src="http://localhost/vas/public/img/cirugia.jpg" alt="">
+          <img src="/img/cirugia.jpg" alt="">
         </div>
 
         <div class="col-lg-6 content">
@@ -51,7 +51,7 @@
               <div class="member">
                 <div class="pic">
                   @if (is_null($clinica->imagen))
-                    <img src="http://localhost/vas/public/img/noimagen.png" alt="">   
+                    <img src="/img/noimagen.png" alt="">   
                   @else
                     <img src="{{url($clinica->imagen)}}" alt="">
                   @endif
@@ -97,7 +97,12 @@ Our Team Section
         <div id="{{$cirujano->especialidad->descripcion}}" class="col-lg-3 col-md-6">
           <a href="{{route('usuario.cirujano.view',$cirujano)}}">
           <div class="member">
-            <div class="pic"><img src="/vas/public/img/cirugia.jpg" alt=""></div>
+            <div class="pic">
+              @if (is_null($cirujano->imagen))
+                <img src="/img/noimagen.png" alt="">   
+              @else
+                <img src="{{url($cirujano->imagen)}}" alt="">
+              @endif
             <div class="details">
               <h4>{{$cirujano->user->name}}</h4>
               <span>{{$cirujano->especialidad->descripcion}}</span>

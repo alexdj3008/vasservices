@@ -65,7 +65,11 @@
         <a href="{{route('usuario.cirujano.view',$cirujano)}}">
           <div class="member">
             <div class="pic">
-              <img src="img/cirujano.jpg" alt="">
+              @if (is_null($cirujano->imagen))
+                <img src="/img/noimagen.png" alt="">   
+              @else
+                <img src="{{url($cirujano->imagen)}}" alt="">
+              @endif
             </div>
             <div class="details">
               <h4>{{$cirujano->user->name}}</h4>
