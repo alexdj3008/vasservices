@@ -20,7 +20,12 @@
                 <div class="col-lg-3 col-md-6">
                   <a href="{{route('usuario.servicio.view',$servicio)}}">
                   <div class="member">
-                    <div class="pic"><img src="img/servicios.jpg" alt=""></div>
+                    <div class="pic">
+                        @if (is_null($servicio->imagen))
+                        <img src="/img/noimagen.png" alt=""> 
+                      @else
+                        <img src="{{url($servicio->imagen)}}" alt=""> @endif
+                    </div>
                     <div class="details">
                       <h4>{{$servicio->nombre}}</h4>
                       <span>{{$servicio->direccion}}</span>

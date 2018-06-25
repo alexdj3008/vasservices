@@ -70,7 +70,7 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li {{request()->is('admin/servicios') ? 'class=active' : ''}}><a href="{{route('admin.servicios.index')}}"><i class="fa fa-eye"> Ver todoss los servicios</i></a></li>
+        <li {{request()->is('admin/servicios') ? 'class=active' : ''}}><a href="{{route('admin.servicios.index')}}"><i class="fa fa-eye"> Ver todos los servicios</i></a></li>
         <li {{request()->is('admin/servicios/create') ? 'class=active' : ''}}><a href="{{route('admin.servicios.create')}}"><i class="fa fa-pencil"> Añadir servicio</i></a></li>
       </ul>
     </li>

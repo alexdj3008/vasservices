@@ -41,7 +41,7 @@ class ServiciosController extends Controller
         $servicio->descripcion=$request->get('descripcion');
         $servicio->estatus="A";
         $servicio->save();
-        return back()->with('flash','Servicio adicional modificado');
+        return back()->with('flash','Servicio modificado con éxito');
     }
     public function storefoto(Servicios $servicio)
     {
@@ -56,6 +56,6 @@ class ServiciosController extends Controller
     {
         $servicio->estatus="E";
         $servicio->save();
-        return back()->with('flash','Servicio adicional Eliminado');
+        return back()->with('flash','Servicio eliminado');
     }
 }
