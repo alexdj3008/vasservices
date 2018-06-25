@@ -11,8 +11,11 @@ class HistoriasController extends Controller
     {
         $historias=HistoriaMedica::where("estatus","=","A")->get();
         return view('medico.historias.index',compact('historias'));
-    }    
-    
+    }  
+    public function view(HistoriaMedica $historia)
+    {
+        return view('medico.historias.view',compact('historia'));
+    }  
     
     public function edit(HistoriaMedica $historia)
     {
@@ -21,6 +24,6 @@ class HistoriasController extends Controller
     public function update(HistoriaMedica $historia,Request $request)
     {
         $historia->update($request->all());
-        return back()->with('flash','Historia medica modificada con éxito');
+        return back()->with('flash','Historia médica actualizada con éxito');
     }
 }

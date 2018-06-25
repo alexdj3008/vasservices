@@ -24,17 +24,23 @@
         <tr>
           <th>ID</th>
           <th>Nombre</th>
-          <th>Especialidad</th>
-          
+          <th>Email</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
         @foreach($pacientes as $paciente)
         <tr>
           <td>{{$paciente->id}}</td>
-          <td>{{$paciente->nombre}}</td>
-          <td>{{$paciente->email}}</td>
-            
+          <td>{{$paciente->user->name}}</td>
+          <td>{{$paciente->user->email}}</td>
+          <td>
+              <a href="{{route('admin.paciente.view',$paciente)}}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> Ver detalles</a>
+              <form action="{{route('admin.paciente.delete',$paciente)}}" onsubmit="return confirm('Seguro que quiere eliminar el registro?')" method="POST" style="display:inline">
+                  {{csrf_field()}} {{method_field('PUT')}}
+                <button href="" class="btn btn-xs btn-danger"><i class="fa fa-times"></i> Eliminar</button>
+              </form>
+          </td> 
         </tr>
           @endforeach
         </tbody>

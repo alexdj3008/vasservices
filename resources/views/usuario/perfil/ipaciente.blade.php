@@ -1,8 +1,8 @@
+@if(auth()->user()->id==$user->id)
 @extends('usuario.layout')
 
 
 @section('content')
-@if(auth()->user()->id==$user->id)
 <br>
 <div class="container">
     <div class="row justify-content-center">
@@ -12,7 +12,16 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{route('paciente.datos.update',$user)}}">
-                            {{csrf_field()}} {{method_field('PUT')}} 
+                            {{csrf_field()}} {{method_field('PUT')}}
+                            @if ($errors->any())
+                            <ul class="list-group">
+                                @foreach ($errors->all() as $error)
+                                    <li class="list-group-item list-group-item-danger">
+                                        {{$error}}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            @endif     
                         <div class="form-group">
                             <label >Nombre y apellido</label>
                             <input name='name' value="{{$user->name}}" placeholder="Ingrese su nombre" class="form-control" required autofocus>
@@ -41,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label >Edad</label>
-                            <input name='edad' value="{{$user->paciente->edad}}" placeholder="Edad" class="form-control" required autofocus>
+                            <input type="number" min="18" step="1" name='edad' value="{{$user->paciente->edad}}" placeholder="Edad" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
                             <label>Imagen</label>
@@ -70,7 +79,7 @@
 </div>
 @endsection
 @else
-    {{redirect()->route('paciente.datos.edit',auth()->user())}}
+    {!!redirect()->route('paciente.datos.edit',auth()->user())!!}
 @endif
 
 @push('styles')

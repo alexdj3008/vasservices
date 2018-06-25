@@ -25,15 +25,18 @@ class PacienteController extends Controller
         $user->name=$request->get('name');
         if($request->filled('password'))
         {
+            $this->validate($request,[
+                'password' => 'required|string|min:6|confirmed'
+                ]);
             $user->password=$request->get('password');
-        }            
+        }                    
         $user->paciente->direccion = $request->get('direccion');
         $user->paciente->telefono = $request->get('telefono');
         $user->paciente->edad = $request->get('edad');
         $paciente=$user->paciente;
         $paciente->save();
         $user->save();
-        return back()->with('flash','Paciente modificado');
+        return back()->with('flash','Paciente modificado con éxito');
     }
     public function storefoto(User $user)
     {

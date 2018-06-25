@@ -48,8 +48,12 @@ Route::group(['prefix' => 'admin',
     function () {
         //Pagina principal de administrador
         Route::get('/', 'AdminController@index')->name('dashboard');
-        //Rutas relacionadas con clinicas
+        //Rutas relacionadas con el paciente
         Route::get('pacientes', 'PacienteController@listadopacientes')->name('admin.pacientes.index');
+        Route::put('pacientes/delete/{paciente}', 'PacienteController@delete')->name('admin.paciente.delete');
+        Route::get('pacientes/{paciente}', 'PacienteController@view')->name('admin.paciente.view');
+
+        //Rutas relacionadas con clinicas
         Route::get('clinicas', 'ClinicasController@listadoclinicas')->name('admin.clinicas.index');
         Route::get('clinicas/create', 'ClinicasController@create')->name('admin.clinicas.create');
         Route::post('clinicas', 'ClinicasController@store')->name('admin.clinicas.store');

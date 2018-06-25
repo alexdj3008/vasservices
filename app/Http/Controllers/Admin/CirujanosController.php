@@ -33,7 +33,8 @@ class CirujanosController extends Controller
             'email'=>'required|email|max:255|unique:users',
         ]);
         //genera una contraseña aleatoria de 8 caracteres
-        $data['password']=str_random(8);
+        // $data['password']=str_random(8);
+        $data['password']='123456';
         //Instancia de cirujano y user
         $cirujano=new Cirujano;
         $user=User::create($data);
@@ -45,7 +46,7 @@ class CirujanosController extends Controller
         $cirujano->save();
         // return $data;
         //Envio de credenciales
-        UsuarioFueCreado::dispatch($user,$data['password']);
+        // UsuarioFueCreado::dispatch($user,$data['password']);
         return redirect()->route('admin.cirujanos.index')->with('flash','Registro realizado con éxito.');
     }
     
