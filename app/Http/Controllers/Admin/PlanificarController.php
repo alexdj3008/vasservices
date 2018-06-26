@@ -32,9 +32,9 @@ class PlanificarController extends Controller
         //verifica si existe previamente una planificacion con los mismos datos de fecha, quirofano y clinica
         $validacion=DB::table('reservacions')
         ->select('reservacions.id','reservacions.fecha')
-        ->join('planificacion_cirugias','reservacions.planificacion_cirugia_id','=','planificacion_cirugias.id')
-        ->where("reservacions.fecha","=",Carbon::parse($request->fecha))->where("reservacions.quirofano_id","=",$request->quirofano)
-        ->where("planificacion_cirugias.id","=",$request->get('clinica'))
+        ->join('quirofanos','reservacions.quirofano_id','=','quirofanos.id')
+        ->where("reservacions.fecha","=",Carbon::parse($request->fecha))
+        ->where("reservacions.quirofano_id","=",$request->quirofano)
         ->get();
         
         if($validacion->isEmpty())
@@ -56,15 +56,15 @@ class PlanificarController extends Controller
             PersonalQuirurgico::create(['nombre'=>$request->get('nombre'),'cargo'=>$request->get('cargo'),'planificacion_cirugia_id'=>$planificacion->id,'estatus'=>'A']);
             PersonalQuirurgico::create(['nombre'=>$request->get('nombre_1'),'cargo'=>$request->get('cargo_1'),'planificacion_cirugia_id'=>$planificacion->id,'estatus'=>'A']);
             $agenda=new Agenda;
-            $agenda->fecha=Carbon::parse($request->fecha);
+
             $agenda->reservacion_id=$reservacion->id;
             $agenda->cirujano_id=$planificacion->cirujano_id;
             $agenda->estatus="A";
             $agenda->save();
             // return $request;
-            return back()->with('flash','Historia medica modificada con éxito');
+            return back()->with('flash','Registro actualizado con éxito');
         }
-        return back()->with('flashd','Horario ocupado, elija otro horario u otro quírofano');
+        return back()->with('flashd','Fecha ya ocupada, elija otra fecha u otro quírofano');
         
     }
     

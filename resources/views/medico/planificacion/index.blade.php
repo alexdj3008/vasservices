@@ -1,15 +1,16 @@
 @extends('medico/layout')
-
 @section('header')
 <h1>
-  Agenda
+  Planificación
   <small></small>
 </h1>
 <ol class="breadcrumb">
   <li><a href="{{route('medico.dashboard')}}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-  <li class="active">Agenda</li>
+  <li class="active">Planificación</li>
 </ol>
 @stop
+
+
 
 @section('content')
   
@@ -26,17 +27,19 @@
           <th>Clínica</th>
           <th>Quirófano</th>
           <th>Paciente</th>
-          
+          <th>Planificacion</th>
         </tr>
       </thead>
       <tbody>
-        @foreach($agendas as $agenda)
+        @foreach($planificacions as $planificacion)
         <tr>
-          <td>{{$agenda->reservacion->fecha->format('d M Y')}}</td>
-          <td>{{$agenda->reservacion->quirofano->clinica->nombre}}</td>
-          <td>{{$agenda->reservacion->quirofano->numero}}</td>
-          <td>{{$agenda->reservacion->planificacion->paciente->user->name}}</td>
-
+          <td>{{$planificacion->reservacion->fecha->format('d M Y')}}</td>
+          <td>{{$planificacion->reservacion->quirofano->clinica->nombre}}</td>
+          <td>{{$planificacion->reservacion->quirofano->numero}}</td>
+          <td>{{$planificacion->paciente->user->name}}</td>
+          <td>
+            <a href="{{route('medico.planificacion.view',$planificacion)}}" class="btn btn-xs btn-default"><i class="fa fa-eye"></i> Ver detalles</a>  
+          </td>
         </tr>
           @endforeach
         </tbody>

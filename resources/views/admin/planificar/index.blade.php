@@ -46,7 +46,7 @@
           @if($cita->estatus=="A")
             <td>Planificación realizada</td>
             <td>
-              <a href="{{route('admin.planificar.edit',$cita)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Editar</a>
+              
             </td>
           @endif
           @if($cita->estatus=="P")
@@ -55,16 +55,7 @@
               <a href="{{route('admin.planificar.edit',$cita)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Editar</a>
             </td>
           @endif 
-          @if($cita->estatus=="D")
-            <td>Paciente dado de alta</td>
-            <td></td>
-          @endif  
-          @if($cita->estatus=="R")
-            <td>Cirugía realizada</td>
-            <td>
-              <a href="{{route('admin.planificar.edit',$cita)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i> Editar</a>
-            </td>
-          @endif 
+          
         </tr>
         @endforeach
       </tbody>

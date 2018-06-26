@@ -28,4 +28,13 @@ class PlanificacionCirugia extends Model
     {
         return $this->belongsTo(Reservacion::class);
     }
+    public function insumos()
+    {
+        return $this->hasMany(Insumo::class);
+    }
+    public function personals()
+    {
+        return $this->hasMany(PersonalQuirurgico::class);
+    }
+
 }

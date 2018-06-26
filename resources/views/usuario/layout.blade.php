@@ -25,7 +25,7 @@
   <link href="/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
   <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   @stack('styles')
-  
+  <link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
   <!-- Hoja de estilos principal -->
   <link href="/css/style.css" rel="stylesheet">
 
@@ -45,6 +45,7 @@
         <div class="social-links float-right">
           @if (auth()->user()->hasRole('paciente'))
             <a href="{{route('paciente.datos.edit',auth()->user())}}" class="twitter"><i class="fa fa-user"></i> Editar informacion</a>
+            <a href="{{route('paciente.planificacion.index',auth()->user())}}" class="twitter"><i class="fa fa-book"></i> Consultar Planificación</a>
           @endif  
             Hola! {{auth()->user()->name}}
 
@@ -126,7 +127,21 @@
   <script src="/lib/magnific-popup/magnific-popup.min.js"></script>
   <script src="/lib/sticky/sticky.js"></script>
   @stack('scripts')
+  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <script>
+      $(function () {
+        $('#historias-table').DataTable({
+          "paging": false,
+          "lengthChange": true,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": true
+        });
+      }); 
   
+    </script>
 
   <!-- Archivo Javascript Principal -->
   <script src="/js/main.js"></script>

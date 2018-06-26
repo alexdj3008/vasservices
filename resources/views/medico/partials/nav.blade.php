@@ -14,6 +14,12 @@
     </a>
   </li>
   <li {{request()->is('medico') ? 'class=active' : ''}}>
+    <a href="{{route('medico.planificacion.index',auth()->user())}}">
+      <i class="fa fa-book"></i>
+      <span>Consultar Planificación</span>
+    </a>
+  </li>
+  <li {{request()->is('medico') ? 'class=active' : ''}}>
       <a href="{{route('medico.quirofanos.index')}}">
         <i class="fa fa-plus-square"></i>
         <span>Quirófanos</span>

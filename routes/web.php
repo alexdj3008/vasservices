@@ -38,6 +38,9 @@ Route::group(['prefix' => 'paciente',
         Route::post('update/{user}/foto', 'PacienteController@storefoto')->name('paciente.datos.storefoto');
         Route::get('citas/create', 'CitasController@create')->name('paciente.citas.create');
         Route::post('citas', 'CitasController@store')->name('paciente.citas.store');
+        Route::get('cirujanotratante/{cirujano}', 'CitasController@cirujano')->name('paciente.infocirujano');
+        Route::get('planificacion/{user}', 'CitasController@listadoplanificacion')->name('paciente.planificacion.index');
+        Route::get('planificacion/ver/{planificacion}', 'CitasController@view')->name('paciente.planificacion.view');
     });
 //fin de rutas de paciente logueado
 
@@ -121,7 +124,9 @@ Route::group(['prefix' => 'medico',
         Route::put('medico/{historia}', 'HistoriasController@update')->name('medico.historia.update');
         //Ruta de la agenda del cirujano
         Route::get('agenda/{user}', 'AgendaController@agenda')->name('medico.agenda.index');
-    
+        //Consultar Planificacion
+        Route::get('planificacion/{user}', 'AgendaController@listadoplanificacion')->name('medico.planificacion.index');
+        Route::get('planificacion/ver/{planificacion}', 'AgendaController@view')->name('medico.planificacion.view');
     });
 
 // Authentication Routes...

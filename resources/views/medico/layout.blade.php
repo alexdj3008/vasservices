@@ -318,7 +318,7 @@ desired effect
         "info": true,
         "autoWidth": true
       });
-    });
+    }); 
 
   </script>
 </body>

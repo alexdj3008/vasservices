@@ -11,7 +11,7 @@ use App\TipoCirugia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
+use App\User;
 class CitasController extends Controller
 {
 
@@ -49,6 +49,20 @@ class CitasController extends Controller
         $cita->paciente_id = Auth::user()->paciente->id;
         $cita->save();
         $cita->servicios()->sync($request->get('servicios'));
-        return redirect()->route('home')->with('flash','Registro realizado con éxito');
+        $cirujano=Cirujano::find($request->get('cirujano'));
+        return redirect()->route('paciente.infocirujano',compact('cirujano'))->with('flash','Solicitud de cirugía registrada');
     }
+    public function cirujano(Cirujano $cirujano)
+    {
+        return view('usuario.cita.infocirujano',compact('cirujano'));
+    }
+    public function listadoplanificacion(User $user)
+    {
+        $planificacions=PlanificacionCirugia::where("estatus","=","A")->where("paciente_id","=",$user->paciente->id)->get();
+        return view('usuario.planificacion.index',compact('planificacions'));
+    }      
+    public function view(PlanificacionCirugia $planificacion)
+    {
+        return view('usuario.planificacion.view',compact('planificacion'));
+    }  
 }
