@@ -19,11 +19,7 @@ class CitasController extends Controller
     public function create()
     {
         $servicios = Servicios::where("estatus", "=", "A")->get();
-        $estados = DB::table('estados')
-            ->select('estados.id', 'estados.nombre')->distinct()
-            ->join('clinicas', 'clinicas.estado_id', '=', 'estados.id')
-            ->where('clinicas.estatus', '=', 'A')
-            ->get();
+        
         $especialidades = DB::table('especialidads')
             ->select('especialidads.id', 'especialidads.descripcion')->distinct()
             ->join('tipo_cirugias', 'tipo_cirugias.especialidad_id', '=', 'especialidads.id')
@@ -31,8 +27,7 @@ class CitasController extends Controller
             ->get();
         $tratamientos = TipoCirugia::where("estatus", "=", "A")->orderBy('especialidad_id')->get();
         $cirujanos = Cirujano::where("estatus", "=", "A")->get();
-        $clinicas = Clinica::where("estatus", "=", "A")->orderBy('estado_id')->get();
-        return view('usuario.cita.icita', compact('estados', 'especialidades', 'tratamientos', 'cirujanos', 'clinicas', 'servicios'));
+        return view('usuario.cita.icita', compact('especialidades', 'tratamientos', 'cirujanos', 'servicios'));
     }
 
     //Método para registrar en la base de datos la solicitud de cirugía por parte del paciente
@@ -65,4 +60,18 @@ class CitasController extends Controller
     {
         return view('usuario.planificacion.view',compact('planificacion'));
     }  
+    public function getCirujanos(Request $request, $id){
+        
+        
+            $cirujanos=Cirujano::cirujanos($id);
+            return $cirujanos;
+        
+    }
+    public function getTratamientos(Request $request, $id){
+        
+        
+            $tratamientos=TipoCirugia::tratamientos($id);
+            return $tratamientos;
+        
+    }
 }

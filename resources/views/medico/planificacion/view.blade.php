@@ -9,7 +9,7 @@
             <i class="fa fa-dashboard"></i> Inicio</a>
     </li>
     <li>
-        <a href="{{route('medico.planificacion.index')}}">
+        <a href="">
             <i class="fa fa-dashboard"></i> Planificación</a>
     </li>
     <li class="active">Consultar Planificación</li>

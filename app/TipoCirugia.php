@@ -15,4 +15,10 @@ class TipoCirugia extends Model
     {
         return $this->belongsToMany(Clinica::class);
     }
+    public static function tratamientos($id)
+    {
+        return TipoCirugia::where('tipo_cirugias.especialidad_id','=',$id)
+        ->where('tipo_cirugias.estatus','=','A')->get();
+    }
+    
 }

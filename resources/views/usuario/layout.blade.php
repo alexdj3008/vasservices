@@ -126,6 +126,8 @@
   <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="/lib/magnific-popup/magnific-popup.min.js"></script>
   <script src="/lib/sticky/sticky.js"></script>
+  <script src="/adminlte/plugins/jQuery/jquery.min.js"></script>
+  <script src="/adminlte/plugins/jQuery/dropdown.js"></script>
   @stack('scripts')
   <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>

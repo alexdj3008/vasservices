@@ -13,29 +13,24 @@
                     <form method="POST" action="{{route('paciente.citas.store')}}">
                             {{csrf_field()}} 
                         <div class="form-group">
-                            <label >Tipo de cirugia</label>
-                            <select name="tratamiento" id="" class="form-control" required autofocus>
-                                <option value="">Selecciona el tipo de cirugía</option>
+                            <label >Especialidad</label>
+                            <select name="especialidad" id="especialidades" class="form-control" required autofocus>
+                                <option value="">Selecciona la especialidad</option>
                                 @foreach ($especialidades as $especialidad)
-                                    <optgroup label="{{$especialidad->descripcion}}">
-                                    @foreach($tratamientos as $tratamiento)
-                                        @if ($tratamiento->especialidad_id==$especialidad->id)
-                                            <option value="{{$tratamiento->id}}">{{$tratamiento->nombre}}</option>    
-                                        @endif
-                                    </optgroup>    
-                                    @endforeach
+                                <option value="{{$especialidad->id}}">{{$especialidad->descripcion}}</option>
                                 @endforeach
-                                
+                            </select>
+                        </div>    
+                        <div class="form-group">
+                            <label >Tipo de cirugia</label>
+                            <select name="tratamiento" id="tratamientos" class="form-control" required autofocus>
+                                <option value="">Selecciona el tipo de cirugía</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label >Médico de preferencia</label>
-                            <select name="cirujano" id="" class="form-control" required autofocus>
-                                <option value="">Selecciona el médico de preferencia</option>
-                                
-                                @foreach($cirujanos as $cirujano)
-                                    <option value="{{$cirujano->id}}">{{$cirujano->user->name}}</option>
-                                @endforeach
+                            <select name="cirujano" id="cirujanos"  class="form-control" required autofocus>
+                                <option value="">Selecciona un cirujano</option>
                             </select>
                         </div>
                         <div class="form-group">

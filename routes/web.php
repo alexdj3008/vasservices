@@ -29,10 +29,13 @@ Route::get('tratamientos/{tratamiento}', 'PagesController@tipocirugia')->name('u
 
 //Fin de las rutas publicas
 //Rutas de paciente logueado
+
 Route::group(['prefix' => 'paciente',
     'namespace' => 'Paciente',
     'middleware' => ['auth','role:paciente']],
     function () {
+        Route::get('citas/tratamientos/{id}', 'CitasController@getTratamientos');
+        Route::get('citas/cirujanos/{id}', 'CitasController@getCirujanos');
         Route::get('editar/{user}', 'PacienteController@edit')->name('paciente.datos.edit');
         Route::put('update/{user}', 'PacienteController@update')->name('paciente.datos.update');
         Route::post('update/{user}/foto', 'PacienteController@storefoto')->name('paciente.datos.storefoto');
@@ -128,7 +131,7 @@ Route::group(['prefix' => 'medico',
         Route::get('planificacion/{user}', 'AgendaController@listadoplanificacion')->name('medico.planificacion.index');
         Route::get('planificacion/ver/{planificacion}', 'AgendaController@view')->name('medico.planificacion.view');
     });
-
+    
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
