@@ -127,9 +127,9 @@ desired effect
             </li>
             <!-- Control Sidebar Toggle Button -->
             <li>
-              <a href="#" data-toggle="control-sidebar">
+              {{-- <a href="#" data-toggle="control-sidebar">
                 <i class="fa fa-gears"></i>
-              </a>
+              </a> --}}
             </li>
           </ul>
         </div>
@@ -200,7 +200,7 @@ desired effect
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
-    <footer class="main-footer">
+    {{-- <footer class="main-footer">
       <!-- To the right -->
       <div class="pull-right hidden-xs">
 
@@ -208,7 +208,7 @@ desired effect
       <!-- Default to the left -->
       <strong>Copyright &copy; 2018
         <a href="{{route('home')}}">VAS</a>.</strong> Todos los derechos reservados.
-    </footer>
+    </footer> --}}
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -219,11 +219,11 @@ desired effect
             <i class="fa fa-home"></i>
           </a>
         </li>
-        <li>
+        {{-- <li>
           <a href="#control-sidebar-settings-tab" data-toggle="tab">
             <i class="fa fa-gears"></i>
           </a>
-        </li>
+        </li> --}}
       </ul>
       <!-- Tab panes -->
       <div class="tab-content">
@@ -298,6 +298,7 @@ desired effect
   <!-- ./wrapper -->
 
   <!-- REQUIRED JS SCRIPTS -->
+  @stack('scripts')
 
   <!-- jQuery 2.2.3 -->
   <script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -306,7 +307,7 @@ desired effect
   <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  {{-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> --}}
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
@@ -316,7 +317,6 @@ desired effect
   <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
   <script src="/adminlte/js/app.min.js"></script>
-  @stack('scripts')
   
   <!-- script de DataTable usado para los listados -->
   <script>

@@ -53,7 +53,8 @@
 
 @endpush
 @push('scripts')
+  <script src="/adminlte/plugins/fullcalendar/fullcalendar.min.js"></script>
 <script>
-    
+  
 </script>
 @endpush
