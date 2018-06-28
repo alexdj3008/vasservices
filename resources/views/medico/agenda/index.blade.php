@@ -43,16 +43,17 @@
         
       </table>
     </div>
+    
     <!-- /.box-body -->
   </div>
   <!-- /.box -->
   
 @stop
+@push('styles')
 
+@endpush
 @push('scripts')
-
 <script>
-       
     
 </script>
 @endpush

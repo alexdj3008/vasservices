@@ -20,15 +20,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!--Tabla-->
   <link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="/adminlte/plugins/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
   <!-- Theme style -->
+  <link rel="stylesheet" href="/adminlte/css/skins/skin-blue-light.css">
   {{-- {{HTML::style('adminlte/css/AdminLTE.min.css')}} --}}
   <link rel="stylesheet" href="/adminlte/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
+    page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
   @stack('styles')
-  <link rel="stylesheet" href="/adminlte/css/skins/skin-blue-light.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -208,28 +211,45 @@ desired effect
 
   <!-- REQUIRED JS SCRIPTS -->
 
-  <!-- jQuery 2.2.3 -->
+  @stack('scripts')
   <script src="/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- jQuery 2.2.3 -->
   <!-- Bootstrap 3.3.6 -->
   <script src="/adminlte/bootstrap/js/bootstrap.min.js"></script>
   <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="/adminlte/plugins/datatables/dataTables.bootstrap.min.js"></script> 
   <!-- AdminLTE App -->
-  @stack('scripts')
   <script src="/adminlte/js/app.min.js"></script>
-
+  {{-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> --}}
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+  
   <!-- page script -->
   <script>
-    $(function () {
-      $('#clinicas-table').DataTable({
-        "paging": true,
-        "lengthChange": true,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": true
-      });
-    });
+    // $(function () {
+    //   $('#clinicas-table').DataTable({
+    //     "paging": true,
+    //     "lengthChange": true,
+    //     "searching": true,
+    //     "ordering": true,
+    //     "info": true,
+    //     "autoWidth": true
+    //   });
+    // });
+    $(document).ready(function() {
+    $('#clinicas-table').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'excel', 'pdf', 'print'
+        ]
+    } );
+} );
   </script>
 </body>
 

@@ -39,6 +39,8 @@ class PlanificarController extends Controller
         
         if($validacion->isEmpty())
         {
+            if(Carbon::parse($request->fecha)>=Carbon::now())
+            {
             $reservacion=new Reservacion;
             $reservacion->planificacion_cirugia_id=$planificacion->id;
             $reservacion->quirofano_id=$request->quirofano;
@@ -63,6 +65,8 @@ class PlanificarController extends Controller
             $agenda->save();
             // return $request;
             return back()->with('flash','Registro actualizado con éxito');
+            }
+            return back()->with('flashd','Fecha de cirugia debe ser mayor a la fecha actual.');    
         }
         return back()->with('flashd','Fecha ya ocupada, elija otra fecha u otro quírofano');
         
